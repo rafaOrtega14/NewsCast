@@ -7,27 +7,29 @@ SkylinkDemo.on('mediaAccessSuccess', function(stream) {
 });
 //--------
 SkylinkDemo.on('incomingStream', function(peerId, stream, isSelf, peerInfo) {
-  if (!isSelf) {
-    console.log(peerInfo);
-    DOMRemoteVideo = document.getElementById("remote_" + peerId);
+  if(peerId=="ZzS7Ohjld_eIKLwaAAfW"){
+    if (!isSelf) {
+      console.log(peerInfo);
+      DOMRemoteVideo = document.getElementById("remote_" + peerId);
 
-    if (!DOMRemoteVideo) {
-      DOMRemoteVideo = document.createElement('video');
-      DOMRemoteVideo.setAttribute("style", "width: 100%; height: 100%");
-      if (window.webrtcDetectedBrowser !== 'IE') {
-        DOMRemoteVideo.setAttribute("autoplay", "autoplay");
+      if (!DOMRemoteVideo) {
+        DOMRemoteVideo = document.createElement('video');
+        DOMRemoteVideo.setAttribute("style", "width: 100%; height: 100%");
+        if (window.webrtcDetectedBrowser !== 'IE') {
+          DOMRemoteVideo.setAttribute("autoplay", "autoplay");
+        }
+        DOMRemoteVideo.setAttribute("id", "remote_" + peerId);
+        var DOMcontainer = document.getElementById("remoteContainer");
+        DOMcontainer.setAttribute("style", "width: 100%; height: 100%");
+        DOMcontainer.appendChild(DOMRemoteVideo);
+        DOMRemoteVideo.onclick = function() {
+          SkylinkDemo.refreshConnection(peerId);
+        };
       }
-      DOMRemoteVideo.setAttribute("id", "remote_" + peerId);
-      var DOMcontainer = document.getElementById("remoteContainer");
-      DOMcontainer.setAttribute("style", "width: 100%; height: 100%");
-      DOMcontainer.appendChild(DOMRemoteVideo);
-      DOMRemoteVideo.onclick = function() {
-        SkylinkDemo.refreshConnection(peerId);
-      };
+      attachMediaStream(DOMRemoteVideo, stream);
     }
-    attachMediaStream(DOMRemoteVideo, stream);
-  }
 
+  }
 });
 //--------
 SkylinkDemo.on('streamEnded', function(peerID, peerInfo, isSelf) {
