@@ -7,7 +7,7 @@ SkylinkDemo.on('mediaAccessSuccess', function(stream) {
 });
 //--------
 SkylinkDemo.on('incomingStream', function(peerId, stream, isSelf, peerInfo) {
-  if (!isSelf) {
+  /*if (!isSelf) {
     console.log("addPeerStream");
     DOMRemoteVideo = document.getElementById("remote_" + peerId);
 
@@ -26,7 +26,7 @@ SkylinkDemo.on('incomingStream', function(peerId, stream, isSelf, peerInfo) {
       };
     }
     attachMediaStream(DOMRemoteVideo, stream);
-  }
+  }*/
 
 });
 //--------
