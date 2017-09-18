@@ -8,6 +8,7 @@ SkylinkDemo.on('mediaAccessSuccess', function(stream) {
 //--------
 SkylinkDemo.on('incomingStream', function(peerId, stream, isSelf, peerInfo) {
     if (!isSelf) {
+      console.log(isSelf);
       console.log(peerId);
       DOMRemoteVideo = document.getElementById("remote_" + peerId);
 
