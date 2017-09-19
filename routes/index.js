@@ -14,13 +14,9 @@ var user = new User({
   name: 'rafita',
   id: req.body.id
 });
-user.dudify(function(err, name) {
-  if (err) throw err;
-  res.send(name)
-});
 user.save(function(err) {
   if (err) throw err;
-
+  res.send("cool todo")
 });
 
 });
