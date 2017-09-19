@@ -17,13 +17,16 @@ router.get('/getstreamid',function(req,res,next){
 });
 router.post('/InsertStreamid',function(req,res,next){
 var user = new User({
-  name: 'rafitase',
+  name: 'gallo',
   id: req.body.id
 });
-user.save(function(err) {
-  if (err) throw err;
-  res.send("cool todo");
-});
-
+user.update(
+    {tweet_id: req.body.id,
+    {$setOnInsert: user},
+    {upsert: true},
+    function(err, numAffected) {
+      res.send(numAffected);
+     }
+);
 });
 module.exports = router;
