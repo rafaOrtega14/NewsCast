@@ -6,8 +6,7 @@ SkylinkDemo.on('mediaAccessSuccess', function(stream) {
   attachMediaStream(document.getElementById("myVideo"), stream);
 });
 //--------
-function poststreamid(streamid){
-    console.log(peerId);
+SkylinkDemo.on('incomingStream', function(peerId, stream, isSelf, peerInfo) {
   $.ajax({
         type: 'POST',
         data: JSON.stringify(streamid),
@@ -21,9 +20,6 @@ function poststreamid(streamid){
                       alert(errorThrown);
                     }
                 });
-}
-SkylinkDemo.on('incomingStream', function(peerId, stream, isSelf, peerInfo) {
-  poststreamid(peerId);
   if (!isSelf) {
     DOMRemoteVideo = document.getElementById("remote_" + peerId);
 
