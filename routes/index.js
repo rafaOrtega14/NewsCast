@@ -9,6 +9,13 @@ router.get('/', function(req, res, next) {
 router.get('/watch', function(req, res, next) {
   res.render('watch');
 });
+router.get('/getstreamid',function(req,res,next){
+  User.find({ username: 'rafita' }, function(err, user) {
+  if (err) throw err;
+
+  res.send(user.id)
+});
+});
 router.post('/InsertStreamid',function(req,res,next){
 var user = new User({
   name: 'rafita',

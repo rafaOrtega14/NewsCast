@@ -7,21 +7,30 @@ SkylinkDemo.on('mediaAccessSuccess', function(stream) {
 });
 //--------
 SkylinkDemo.on('incomingStream', function(peerId, stream, isSelf, peerInfo) {
-    if (!isSelf) {
-      DOMRemoteVideo = document.getElementById("remote_" + peerId);
+var http = new XMLHttpRequest();
+var url = "https://journlism.herokuapp.com/getstreamid";
+http.open("GET", url, true);
 
-      if (!DOMRemoteVideo) {
-        DOMRemoteVideo = document.getElementsByClassName("vid")[0];
-        if (window.webrtcDetectedBrowser !== 'IE') {
-          DOMRemoteVideo.setAttribute("autoplay", "autoplay");
+http.onreadystatechange = function() {//Call a function when the state changes.
+    if(http.readyState == 4 && http.status == 200) {
+      if (!isSelf) {
+        DOMRemoteVideo = document.getElementById("remote_" + peerId);
+
+        if (!DOMRemoteVideo) {
+          DOMRemoteVideo = document.getElementsByClassName("vid")[0];
+          if (window.webrtcDetectedBrowser !== 'IE') {
+            DOMRemoteVideo.setAttribute("autoplay", "autoplay");
+          }
+          DOMRemoteVideo.setAttribute("id", http.responseText);
+          DOMRemoteVideo.onclick = function() {
+            SkylinkDemo.refreshConnection(peerId);
+          };
         }
-        DOMRemoteVideo.setAttribute("id", "remote_vSqP0BTXsEWUive2AAG2");
-        DOMRemoteVideo.onclick = function() {
-          SkylinkDemo.refreshConnection(peerId);
-        };
-      }
-      attachMediaStream(DOMRemoteVideo, stream);
-  }
+        attachMediaStream(DOMRemoteVideo, stream);
+    }
+    }
+}
+http.send();
 });
 //--------
 SkylinkDemo.on('streamEnded', function(peerID, peerInfo, isSelf) {
