@@ -6,7 +6,7 @@ SkylinkDemo.on('mediaAccessSuccess', function(stream) {
   attachMediaStream(document.getElementById("myVideo"), stream);
 });
 //--------
-/*SkylinkDemo.on('incomingStream', function(peerId, stream, isSelf, peerInfo) {
+SkylinkDemo.on('incomingStream', function(peerId, stream, isSelf, peerInfo) {
     if (!isSelf) {
       DOMRemoteVideo = document.getElementById("remote_" + peerId);
 
@@ -19,6 +19,8 @@ SkylinkDemo.on('mediaAccessSuccess', function(stream) {
         DOMRemoteVideo.setAttribute("id", "remote_" + peerId);
         var DOMcontainer = document.getElementById("remoteContainer");
         DOMcontainer.setAttribute("style", "width: 100%; height: 100%");
+        DOMRemoteVideo.autoplay = true;
+        DOMRemoteVideo.muted = true;
         DOMcontainer.appendChild(DOMRemoteVideo);
         DOMRemoteVideo.onclick = function() {
           SkylinkDemo.refreshConnection(peerId);
@@ -26,14 +28,6 @@ SkylinkDemo.on('mediaAccessSuccess', function(stream) {
       }
       attachMediaStream(DOMRemoteVideo, stream);
   }
-});*/
-SkylinkDemo.on('peerJoined', function(peerId, peerInfo, isSelf) {
-  if(isSelf) return; // We already have a video element for our video and don't need to create a new one.
-  var vid = document.createElement('video');
-  vid.autoplay = true;
-  vid.muted = true; // Added to avoid feedback when testing locally
-  vid.id = peerId;
-  document.body.appendChild(vid);
 });
 //--------
 SkylinkDemo.on('streamEnded', function(peerID, peerInfo, isSelf) {
