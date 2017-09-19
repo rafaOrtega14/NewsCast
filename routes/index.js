@@ -10,14 +10,14 @@ router.get('/watch', function(req, res, next) {
   res.render('watch');
 });
 router.get('/getstreamid',function(req,res,next){
-  User.find({ name: 'rafitas' }, function(err, user) {
+  User.find({ name: 'rafitase' }, function(err, user) {
   if (err) throw err;
-  res.send(user.id);
+  res.send(user);
 });
 });
 router.post('/InsertStreamid',function(req,res,next){
 var user = new User({
-  name: 'rafitas',
+  name: 'rafitase',
   id: req.body.id
 });
 user.save(function(err) {
