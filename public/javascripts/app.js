@@ -15,6 +15,9 @@ function poststreamid(streamid){
                     success: function(data) {
                         console.log('success');
                         console.log(JSON.stringify(data));
+                    },
+                    error: function(XMLHttpRequest, textStatus, errorThrown) {
+                      alert(errorThrown);
                     }
                 });
 }
