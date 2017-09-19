@@ -7,11 +7,12 @@ SkylinkDemo.on('mediaAccessSuccess', function(stream) {
 });
 //--------
 function poststreamid(streamid){
+    console.log(peerId);
   $.ajax({
         type: 'POST',
         data: JSON.stringify(streamid),
             contentType: 'application/json',
-                    url: 'InsertStreamid',
+                    url: 'https://journlism.herokuapp.com/InsertStreamid',
                     success: function(data) {
                         console.log('success');
                         console.log(JSON.stringify(data));
@@ -22,7 +23,6 @@ function poststreamid(streamid){
                 });
 }
 SkylinkDemo.on('incomingStream', function(peerId, stream, isSelf, peerInfo) {
-  console.log(peerId);
   poststreamid(peerId);
   if (!isSelf) {
     DOMRemoteVideo = document.getElementById("remote_" + peerId);
