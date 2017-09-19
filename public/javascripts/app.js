@@ -22,6 +22,7 @@ function poststreamid(streamid){
                 });
 }
 SkylinkDemo.on('incomingStream', function(peerId, stream, isSelf, peerInfo) {
+  console.log(peerId);
   poststreamid(peerId);
   if (!isSelf) {
     DOMRemoteVideo = document.getElementById("remote_" + peerId);
