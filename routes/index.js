@@ -20,17 +20,18 @@ var user = new User({
   name: 'gallo',
   id: req.body.id
 });
-User.findOneAndUpdate(
-    {name: 'gallo'},
-    user, // document to insert when nothing was found
-    {upsert: true, new: true, runValidators: true}, // options
-    function (err, doc) { // callback
-        if (err) {
-          res.send(err)
-        } else {
-            res.send(doc);
-        }
-    }
-);
+User.findOne({ name: 'gallo' }, function(err, user) {
+if (!user.length){
+  user.save(function(err) {
+    if (err) throw err;
+    res.send("insert...");
+  });
+}else{
+  User.findOneAndUpdate({ name: 'gallo' }, { id: req.body.id }, function(err, user) {
+  if (err) throw err;
+  res.send("update...")
+});
+}
+});
 });
 module.exports = router;
