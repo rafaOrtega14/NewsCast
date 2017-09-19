@@ -9,6 +9,6 @@ router.get('/watch', function(req, res, next) {
   res.render('watch');
 });
 router.post('/InsertStreamid',function(req,res,next){
-res.send(req.id);
+res.send("polla");
 });
 module.exports = router;
