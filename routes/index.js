@@ -28,7 +28,7 @@ user.findOneAndUpdate(
         if (err) {
           res.send(err)
         } else {
-            res.send(doc),
+            res.send(doc);
         }
     }
 );
