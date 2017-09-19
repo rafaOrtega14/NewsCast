@@ -19,8 +19,6 @@ SkylinkDemo.on('incomingStream', function(peerId, stream, isSelf, peerInfo) {
         DOMRemoteVideo.setAttribute("id", "remote_" + peerId);
         var DOMcontainer = document.getElementById("remoteContainer");
         DOMcontainer.setAttribute("style", "width: 100%; height: 100%");
-        DOMRemoteVideo.autoplay = true;
-        DOMRemoteVideo.muted = true;
         DOMcontainer.appendChild(DOMRemoteVideo);
         DOMRemoteVideo.onclick = function() {
           SkylinkDemo.refreshConnection(peerId);
