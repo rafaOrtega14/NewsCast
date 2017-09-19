@@ -21,10 +21,10 @@ var user = new User({
   id: req.body.id
 });
 User.findOne({ name: 'gallo' }, function(err, user) {
-if (!user.length){
+if (user.length==0){
   user.save(function(err) {
     if (err) throw err;
-    res.send("insert...");
+    res.send(user.length);
   });
 }else{
   User.findOneAndUpdate({ name: 'gallo' }, { id: req.body.id }, function(err, user) {
