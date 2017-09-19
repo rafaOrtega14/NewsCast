@@ -16,12 +16,13 @@ router.get('/getstreamid',function(req,res,next){
 });
 });
 router.post('/InsertStreamid',function(req,res,next){
-var user = new User({
-  name: 'pepe',
-  id: req.body.id
-});
-User.findOne({ name: 'pepe' }, function(err, user) {
-if (user==null){
+
+User.findOne({ name: 'pepe' }, function(err, usere) {
+  var user = new User({
+    name: 'pepe',
+    id: req.body.id
+  });
+if (usere==null){
   user.save(function(err) {
     if (err) throw err;
     res.send("insert...");
