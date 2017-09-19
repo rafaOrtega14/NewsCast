@@ -6,6 +6,9 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 router.get('/watch', function(req, res, next) {
-  res.render('watch', { title: 'Express' });
+  res.render('watch');
+});
+router.post('/InsertStreamid',function(req,res,next){
+res.send(request.body.user.name);
 });
 module.exports = router;
