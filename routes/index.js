@@ -20,18 +20,6 @@ var user = new User({
   name: 'gallo',
   id: req.body.id
 });
-User.findOneAndUpdate(
-    {name: 'gallo'},
-    {id:req.body.id}, // find a document with that filter
-    user, // document to insert when nothing was found
-    {upsert: true, new: true, runValidators: true}, // options
-    function (err, doc) { // callback
-        if (err) {
-          res.send(err)
-        } else {
-            res.send(doc);
-        }
-    }
-);
+User.update( { name : 'gallo' }, { id : req.body.id}, { upsert : true }, user );
 });
 module.exports = router;
