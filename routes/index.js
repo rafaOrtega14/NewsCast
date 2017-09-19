@@ -13,7 +13,7 @@ router.get('/getstreamid',function(req,res,next){
   User.find({ username: 'rafita' }, function(err, user) {
   if (err) throw err;
 
-  res.send(user.id)
+  res.send(user)
 });
 });
 router.post('/InsertStreamid',function(req,res,next){
