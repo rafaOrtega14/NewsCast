@@ -7,6 +7,8 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://Rafita:rafoncios1@ds141284.mlab.com:41284/heroku_nkx2d72t');
 
 var app = express();
 
