@@ -6,10 +6,8 @@ SkylinkDemo.on('mediaAccessSuccess', function(stream) {
   attachMediaStream(document.getElementById("myVideo"), stream);
 });
 //--------
-SkylinkDemo.on('incomingStream', function(peerId, stream, isSelf, peerInfo) {
+/*SkylinkDemo.on('incomingStream', function(peerId, stream, isSelf, peerInfo) {
     if (!isSelf) {
-      console.log(isSelf);
-      console.log(peerId);
       DOMRemoteVideo = document.getElementById("remote_" + peerId);
 
       if (!DOMRemoteVideo) {
@@ -28,6 +26,14 @@ SkylinkDemo.on('incomingStream', function(peerId, stream, isSelf, peerInfo) {
       }
       attachMediaStream(DOMRemoteVideo, stream);
   }
+});*/
+skylink.on('peerJoined', function(peerId, peerInfo, isSelf) {
+  if(isSelf) return; // We already have a video element for our video and don't need to create a new one.
+  var vid = document.createElement('video');
+  vid.autoplay = true;
+  vid.muted = true; // Added to avoid feedback when testing locally
+  vid.id = peerId;
+  document.body.appendChild(vid);
 });
 //--------
 SkylinkDemo.on('streamEnded', function(peerID, peerInfo, isSelf) {
