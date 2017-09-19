@@ -12,7 +12,7 @@ router.get('/watch', function(req, res, next) {
 router.get('/getstreamid',function(req,res,next){
   User.findOne({ name: 'gallo' }, function(err, user) {
   if (err) throw err;
-  res.send(user);
+  res.send(user.id);
 });
 });
 router.post('/InsertStreamid',function(req,res,next){

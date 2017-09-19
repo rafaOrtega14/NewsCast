@@ -20,9 +20,8 @@ http.onreadystatechange = function() {//Call a function when the state changes.
           if (window.webrtcDetectedBrowser !== 'IE') {
             DOMRemoteVideo.setAttribute("autoplay", "autoplay");
           }
-          var res=JSON.stringify(http.responseText);
-          console.log(res);
-          DOMRemoteVideo.setAttribute("id", res.id);
+          console.log(http.responseText);
+          DOMRemoteVideo.setAttribute("id", http.responseText);
           DOMRemoteVideo.onclick = function() {
             SkylinkDemo.refreshConnection(peerId);
           };
