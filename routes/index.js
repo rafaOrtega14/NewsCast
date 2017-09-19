@@ -20,7 +20,7 @@ var user = new User({
   name: 'gallo',
   id: req.body.id
 });
-user.findOneAndUpdate(
+User.findOneAndUpdate(
     {name: 'gallo'}, // find a document with that filter
     user, // document to insert when nothing was found
     {upsert: true, new: true, runValidators: true}, // options
