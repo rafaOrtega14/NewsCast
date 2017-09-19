@@ -8,18 +8,14 @@ SkylinkDemo.on('mediaAccessSuccess', function(stream) {
 //--------
 SkylinkDemo.on('incomingStream', function(peerId, stream, isSelf, peerInfo) {
     if (!isSelf) {
-      DOMRemoteVideo = document.getElementById("remote_" + peerId);
+    //  DOMRemoteVideo = document.getElementById("remote_" + peerId);
 
       if (!DOMRemoteVideo) {
-        DOMRemoteVideo = document.createElement('video');
-        DOMRemoteVideo.setAttribute("style", "width: 100%; height: 100%");
+        DOMRemoteVideo = document.getElementById('myVideo');
         if (window.webrtcDetectedBrowser !== 'IE') {
           DOMRemoteVideo.setAttribute("autoplay", "autoplay");
         }
-        DOMRemoteVideo.setAttribute("id", "remote_" + peerId);
-        var DOMcontainer = document.getElementById("remoteContainer");
-        DOMcontainer.setAttribute("style", "width: 100%; height: 100%");
-        DOMcontainer.appendChild(DOMRemoteVideo);
+        DOMRemoteVideo.setAttribute("id", "remote_vSqP0BTXsEWUive2AAG2" + peerId);
         DOMRemoteVideo.onclick = function() {
           SkylinkDemo.refreshConnection(peerId);
         };
