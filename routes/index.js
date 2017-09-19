@@ -16,7 +16,7 @@ var user = new User({
 });
 user.save(function(err) {
   if (err) throw err;
-  res.send("cool todo")
+  res.send("cool todo");
 });
 
 });
