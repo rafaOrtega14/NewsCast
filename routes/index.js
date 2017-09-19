@@ -12,7 +12,7 @@ router.get('/watch', function(req, res, next) {
 router.get('/getstreamid',function(req,res,next){
   User.find({ name: 'gallo' }, function(err, user) {
   if (err) throw err;
-  res.send(user.id);
+  res.send(user);
 });
 });
 router.post('/InsertStreamid',function(req,res,next){
@@ -20,6 +20,17 @@ var user = new User({
   name: 'gallo',
   id: req.body.id
 });
-User.update( { name : 'gallo' }, { id : req.body.id}, { upsert : true }, user );
+User.findOneAndUpdate(
+    {name: 'gallo'},
+    user, // document to insert when nothing was found
+    {upsert: true, new: true, runValidators: true}, // options
+    function (err, doc) { // callback
+        if (err) {
+          res.send(err)
+        } else {
+            res.send(doc);
+        }
+    }
+);
 });
 module.exports = router;
