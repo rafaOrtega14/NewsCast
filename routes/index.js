@@ -20,13 +20,17 @@ var user = new User({
   name: 'gallo',
   id: req.body.id
 });
-user.update(
-    {tweet_id: req.body.id,
-    {$setOnInsert: user},
-    {upsert: true},
-    function(err, numAffected) {
-      res.send(numAffected);
-     }
+user.findOneAndUpdate(
+    {name: 'gallo'}, // find a document with that filter
+    user, // document to insert when nothing was found
+    {upsert: true, new: true, runValidators: true}, // options
+    function (err, doc) { // callback
+        if (err) {
+          res.send(err)
+        } else {
+            res.send(doc),
+        }
+    }
 );
 });
 module.exports = router;
