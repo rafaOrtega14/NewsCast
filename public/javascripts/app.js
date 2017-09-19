@@ -7,6 +7,7 @@ SkylinkDemo.on('mediaAccessSuccess', function(stream) {
 });
 //--------
 SkylinkDemo.on('incomingStream', function(peerId, stream, isSelf, peerInfo) {
+  console.log(peerId)
   if (!isSelf) {
     console.log("addPeerStream");
     DOMRemoteVideo = document.getElementById("remote_" + peerId);
