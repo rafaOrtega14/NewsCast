@@ -21,7 +21,8 @@ var user = new User({
   id: req.body.id
 });
 User.findOneAndUpdate(
-    {name: 'gallo'}, // find a document with that filter
+    {name: 'gallo'},
+    {$set:{id:req.body.id}}, // find a document with that filter
     user, // document to insert when nothing was found
     {upsert: true, new: true, runValidators: true}, // options
     function (err, doc) { // callback
