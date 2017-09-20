@@ -2,7 +2,7 @@ var SkylinkDemo = new Skylink();
 
 //--------
 SkylinkDemo.on('mediaAccessSuccess', function(stream) {
-  console.log("mediaAccessSuccess");
+  console.log(stream);
   attachMediaStream(document.getElementById("myVideo"), stream);
 });
 //--------
