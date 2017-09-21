@@ -81,7 +81,6 @@ SkylinkDemo.on('peerLeft', function(peerID) {
 function begintoStream(){
   SkylinkDemo.init(config, function (error, success) {
     if (success) {
-      launchIntoFullscreen(document.documentElement);
       SkylinkDemo.joinRoom({
         audio: true,
         video: true
