@@ -14,7 +14,6 @@ $("#myVideo").hide();
 //--------
 SkylinkDemo.on('mediaAccessSuccess', function(stream) {
   console.log(stream);
-  $(".mdl-layout__content").hide();
   $("#vid").fadeOut();
   $("#myVideo").show();
   attachMediaStream(document.getElementById("myVideo"), stream);
@@ -80,6 +79,7 @@ SkylinkDemo.on('peerLeft', function(peerID) {
 });
 
 function begintoStream(){
+    $(".mdl-layout__content").hide();
   SkylinkDemo.init(config, function (error, success) {
     if (success) {
       SkylinkDemo.joinRoom({
