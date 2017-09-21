@@ -11,7 +11,7 @@ router.get('/watch', function(req, res, next) {
 });
 router.get('/getstreamid',function(req,res,next){
   User.findOne({ name: 'pepa' }, function(err, user) {
-  if (err) throw err;
+  if (err) res.send("0");
   res.send(user.id);
 });
 });
