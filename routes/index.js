@@ -4,7 +4,12 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  User.findOne({ name: 'pepa' }, function(err, info) {
+    if (err) console.log("error");
+    var url="https://journlism.herokuapp.com/watch?room="+info.room;
+  res.render('index', { stream: url});
+});
+
 });
 router.get('/watch', function(req, res, next) {
   res.render('watch');
