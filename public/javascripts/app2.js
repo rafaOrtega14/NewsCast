@@ -61,7 +61,7 @@ SkylinkDemo.on('peerLeft', function(peerID) {
   SkylinkDemo.init(config, function (error, success) {
     if (success) {
       SkylinkDemo.joinRoom({
-        audio: false,
+        audio: true,
         video: true
       });
     }

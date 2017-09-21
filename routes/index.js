@@ -6,8 +6,7 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   User.findOne({ name: 'pepa' }, function(err, info) {
     if (err) console.log("error");
-    var url="https://journlism.herokuapp.com/watch?room="+info.room;
-  res.render('index', { stream: url});
+  res.render('index', { stream: info});
 });
 
 });
