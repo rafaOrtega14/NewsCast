@@ -62,7 +62,7 @@ SkylinkDemo.on('peerLeft', function(peerID) {
     if (success) {
       SkylinkDemo.joinRoom({
         audio: false,
-        video: false
+        video: true
       });
     }
   });
