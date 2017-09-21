@@ -10,17 +10,18 @@ router.get('/watch', function(req, res, next) {
   res.render('watch');
 });
 router.get('/getstreamid',function(req,res,next){
-  User.findOne({ name: 'pepe' }, function(err, user) {
+  User.findOne({ name: 'pepa' }, function(err, user) {
   if (err) throw err;
   res.send(user.id);
 });
 });
 router.post('/InsertStreamid',function(req,res,next){
 
-User.findOne({ name: 'pepe' }, function(err, usere) {
+User.findOne({ name: 'pepa' }, function(err, usere) {
   var user = new User({
-    name: 'pepe',
-    id: req.body.id
+    name: 'pepa',
+    id: req.body.id,
+    room: req.body.room
   });
 if (usere==null){
   user.save(function(err) {
@@ -28,7 +29,7 @@ if (usere==null){
     res.send("insert...");
   });
 }else{
-  User.findOneAndUpdate({ name: 'pepe' }, { id: req.body.id }, function(err, user) {
+  User.findOneAndUpdate({ name: 'pepa' }, { id: req.body.id }, function(err, user) {
   if (err) throw err;
   res.send("update...")
 });

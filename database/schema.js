@@ -5,6 +5,7 @@ var Schema = mongoose.Schema;
 var userSchema = new Schema({
   name: String,
   id:  String
+  room: Number
 });
 
 // the schema is useless so far

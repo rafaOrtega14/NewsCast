@@ -9,10 +9,10 @@ SkylinkDemo.on('mediaAccessSuccess', function(stream) {
 });
 //--------
 SkylinkDemo.on('incomingStream', function(peerId, stream, isSelf, peerInfo) {
-  console.log(peerInfo);
+  console.log(peerInfo.room);
   var http = new XMLHttpRequest();
 var url = "https://journlism.herokuapp.com/InsertStreamid";
-var params = "id="+peerId;
+var params = "id="+peerId"&room="+peerInfo.room;
 http.open("POST", url, true);
 
 //Send the proper header information along with the request
