@@ -14,8 +14,8 @@ $("#myVideo").hide();
 //--------
 SkylinkDemo.on('mediaAccessSuccess', function(stream) {
   console.log(stream);
-  $("#vid").fadeOut();
   $(".mdl-layout__content").hide();
+  $("#vid").fadeOut();
   $("#myVideo").show();
   attachMediaStream(document.getElementById("myVideo"), stream);
 });
