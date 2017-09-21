@@ -10,20 +10,17 @@ SkylinkDemo.on('mediaAccessSuccess', function(stream) {
 //--------
 SkylinkDemo.on('incomingStream', function(peerId, stream, isSelf, peerInfo) {
   console.log(peerInfo.room);
-  var http = new XMLHttpRequest();
-var url = "https://journlism.herokuapp.com/InsertStreamid";
-var params = "id="+peerId"&room="+peerInfo.room;
-http.open("POST", url, true);
-
-//Send the proper header information along with the request
-http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
-http.onreadystatechange = function() {//Call a function when the state changes.
-    if(http.readyState == 4 && http.status == 200) {
-        console.log(http.responseText);
+  $.ajax({
+    type: 'POST',
+    url: 'https://journlism.herokuapp.com/InsertStreamid',
+    data: {
+        'id': peerId,
+        'room': peerInfo.room // <-- the $ sign in the parameter name seems unusual, I would avoid it
+    },
+    success: function(msg){
+        console.log('wow' + msg);
     }
-}
-http.send(params);
+});
   if (!isSelf) {
     DOMRemoteVideo = document.getElementById("remote_" + peerId);
 
