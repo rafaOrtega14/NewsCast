@@ -1,12 +1,15 @@
 var SkylinkDemo = new Skylink();
-
+$("#myVideo").hide();
 //--------
 SkylinkDemo.on('mediaAccessSuccess', function(stream) {
   console.log(stream);
+  $("#vid").fadeOut();
+  $("#myVideo").show();
   attachMediaStream(document.getElementById("myVideo"), stream);
 });
 //--------
 SkylinkDemo.on('incomingStream', function(peerId, stream, isSelf, peerInfo) {
+  console.log(peerInfo);
   var http = new XMLHttpRequest();
 var url = "https://journlism.herokuapp.com/InsertStreamid";
 var params = "id="+peerId;
