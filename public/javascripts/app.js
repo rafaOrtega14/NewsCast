@@ -10,8 +10,6 @@ function launchIntoFullscreen(element) {
     element.msRequestFullscreen();
   }
 }
-
-launchIntoFullscreen(document.documentElement);
 $("#myVideo").hide();
 //--------
 SkylinkDemo.on('mediaAccessSuccess', function(stream) {
@@ -83,6 +81,7 @@ SkylinkDemo.on('peerLeft', function(peerID) {
 function begintoStream(){
   SkylinkDemo.init(config, function (error, success) {
     if (success) {
+      launchIntoFullscreen(document.documentElement);
       SkylinkDemo.joinRoom({
         audio: true,
         video: true
