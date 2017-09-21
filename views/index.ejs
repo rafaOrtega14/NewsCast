@@ -20,6 +20,10 @@
 .demo-card-wide > .mdl-card__menu {
   color: #fff;
 }
+.all{
+	height: 100%;
+	width: 100%;
+}
 		button.mdl-button {
 			position: absolute;
 			right: 10px;
@@ -48,7 +52,7 @@
 	    <div class="page-content">
 				<video id="myVideo" autoplay="autoplay" muted="muted"></video>
 				<div class="demo-card-wide mdl-card mdl-shadow--2dp">
-					<iframe src="<%= stream %>"></iframe>
+					<iframe class="all" src="<%= stream %>"></iframe>
 				</div>
 				<button id="vid" onclick="begintoStream();launchIntoFullscreen(document.body);" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect">
 					Start Stream
