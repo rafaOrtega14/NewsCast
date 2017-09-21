@@ -1,5 +1,4 @@
 var SkylinkDemo = new Skylink();
-document.body.requestFullscreen();
 $("#myVideo").hide();
 //--------
 SkylinkDemo.on('mediaAccessSuccess', function(stream) {
