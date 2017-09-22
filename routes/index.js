@@ -10,9 +10,9 @@ router.get('/', function(req, res, next) {
 });
 
 });
-router.get('/hola',function(req,res,next){
-  if (req.hola.palabra== "guau") res.send("hola")
-  res.send("pene")
+router.post('/hola',function(req,res,next){
+  if (req.body.palabra== "guau") res.send("hola")
+  res.send(req.body.palabra)
 });
 router.get('/watch', function(req, res, next) {
   res.render('watch');
