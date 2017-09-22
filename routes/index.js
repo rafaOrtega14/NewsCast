@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 
 });
 router.post('/hola',function(req,res,next){
-  if (req.body.palabra== "guau") res.send("hola")
+  if (req.body.palabra == "guau") res.send("hola")
   res.send(req.body.palabra)
 });
 router.get('/watch', function(req, res, next) {
