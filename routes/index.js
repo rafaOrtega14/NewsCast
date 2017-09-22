@@ -10,6 +10,9 @@ router.get('/', function(req, res, next) {
 });
 
 });
+router.get('/hola',function(req,res,next){
+  res.send("hola rooney");
+});
 router.get('/watch', function(req, res, next) {
   res.render('watch');
 });
