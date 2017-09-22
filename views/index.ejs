@@ -52,19 +52,37 @@
 	      <div class="mdl-layout-spacer"></div>
 	    </div>
 	  </header>
+		<div class="page-content">
 	  <main class="mdl-layout__content">
-	    <div class="page-content">
-				<div class="demo-card-image mdl-card mdl-shadow--2dp">
-  <div class="mdl-card__title mdl-card--expand">
-	</div>
-  <div class="mdl-card__actions">
-    <span class="demo-card-image__filename"><%= stream.name+" "+stream.room %></span>
-  </div>
-</div>
-				<button id="vid" onclick="begintoStream();launchIntoFullscreen(document.body);" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect">
-					Start Stream
-				</button>
-			</div>
+			<div class = "mdl-tabs mdl-js-tabs">
+               <div class = "mdl-tabs__tab-bar">
+                  <a href = "#tab1-panel" class = "mdl-tabs__tab is-active">Streams</a>
+                  <a href = "#tab2-panel" class = "mdl-tabs__tab">Articles</a>
+                  <a href = "#tab3-panel" class = "mdl-tabs__tab">muuuuuu</a>
+               </div>
+
+               <div class = "mdl-tabs__panel is-active" id = "tab1-panel">
+									 <div class="demo-card-image mdl-card mdl-shadow--2dp">
+							<div class="mdl-card__title mdl-card--expand">
+						 </div>
+							<div class="mdl-card__actions">
+								<span class="demo-card-image__filename"><%= stream.name+" "+stream.room %></span>
+						</div>
+									 <button id="vid" onclick="begintoStream();launchIntoFullscreen(document.body);" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect">
+										 Start Stream
+									 </button>
+								 </div>
+               </div>
+
+               <div class = "mdl-tabs__panel" id = "tab2-panel">
+                  <p>Tab 2 Content</p>
+               </div>
+
+               <div class = "mdl-tabs__panel" id = "tab3-panel">
+                  <p>Tab 3 Content</p>
+               </div>
+            </div>
+
 		</div>
 	  </main>
 		<video id="myVideo" autoplay="autoplay" muted="muted"></video>

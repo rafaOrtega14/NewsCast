@@ -19,13 +19,19 @@ router.get('/getstreamid',function(req,res,next){
   res.send(user.id);
 });
 });
+router.get('/EndStream',function(,req,res,next){
+  User.findOneAndUpdate({ name: 'pepa' }, { live: false}, function(err, user) {
+  if (err) throw err;
+  res.send("update...")
+});
+});
 router.post('/InsertStreamid',function(req,res,next){
-
 User.findOne({ name: 'pepa' }, function(err, usere) {
   var user = new User({
     name: 'pepa',
     id: req.body.id,
-    room: req.body.room
+    room: req.query.room,
+    live: true
   });
 if (usere==null){
   user.save(function(err) {
@@ -33,7 +39,7 @@ if (usere==null){
     res.send("insert...");
   });
 }else{
-  User.findOneAndUpdate({ name: 'pepa' }, { id: req.body.id }, function(err, user) {
+  User.findOneAndUpdate({ name: 'pepa' }, { id: req.body.id,room:req.query.room,live:true }, function(err, user) {
   if (err) throw err;
   res.send("update...")
 });
