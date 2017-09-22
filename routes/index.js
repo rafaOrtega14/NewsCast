@@ -6,7 +6,7 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   User.findOne({ name: 'pepa' }, function(err, info) {
     if (err) console.log("error");
-  res.render('index', { stream: info});
+  //res.render('index', { stream: info});
 });
 
 });
@@ -29,6 +29,7 @@ router.get('/EndStream',function(req,res,next){
 });
 });
 router.post('/InsertStreamid',function(req,res,next){
+
 User.findOne({ name: 'pepa' }, function(err, usere) {
   var user = new User({
     name: 'pepa',
