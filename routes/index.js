@@ -19,7 +19,7 @@ router.get('/getstreamid',function(req,res,next){
   res.send(user.id);
 });
 });
-router.get('/EndStream',function(,req,res,next){
+router.get('/EndStream',function(req,res,next){
   User.findOneAndUpdate({ name: 'pepa' }, { live: false}, function(err, user) {
   if (err) throw err;
   res.send("update...")
