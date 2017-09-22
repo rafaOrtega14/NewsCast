@@ -6,12 +6,13 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   User.findOne({ name: 'pepa' }, function(err, info) {
     if (err) console.log("error");
-  //res.render('index', { stream: info});
+  res.render('index', { stream: info});
 });
 
 });
 router.get('/hola',function(req,res,next){
-  res.send("hola rooney");
+  if (req.body.Number == "guau") res.send("hola")
+  res.send("pene")
 });
 router.get('/watch', function(req, res, next) {
   res.render('watch');
