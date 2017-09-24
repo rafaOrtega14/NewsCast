@@ -5,7 +5,7 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
-  User.findOne({ live:true }, function(err, info) {
+  User.find({ live:true }, function(err, info) {
     var bla={};
     if (err){
       console.log("error");
