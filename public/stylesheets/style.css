@@ -6,6 +6,7 @@
 @media only screen and (max-width: 500px) {
   p{
     color:white;
+    font-size: 20px;
   }
   .mdl-grid.center-items {
     margin-top: 10%;
@@ -44,10 +45,9 @@ position: fixed;
 bottom: 30px;
 right: 5%;
 width:300px;
-min-height:40px;
+min-height:30px;
 background-color:#D50000;
 color:white;
-font-size: 20px;
 z-index:300000;
 }
 #video_box{
@@ -102,6 +102,7 @@ font-weight: 500;
     bottom:10px;
 }
 p{
+  font-size: 20px;
   color:white;
 }
 #wrapper {
@@ -109,9 +110,8 @@ position: fixed;
 bottom: 30px;
 right: 40%;
 width:300px;
-min-height:40px;
+min-height:30px;
 background-color:#D50000;
-font-size: 20px;
 z-index:300000;
 }
 #video_box{
