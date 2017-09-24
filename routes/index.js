@@ -12,6 +12,7 @@ router.get('/', function(req, res, next) {
     }else{
       var ninf = {
      name: 'default',
+     room:"252432345",
      live: true
    };
    if(info==null){
