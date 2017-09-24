@@ -4,10 +4,6 @@
 }
 
 @media only screen and (max-width: 500px) {
-  p{
-    color:white;
-    font-size: 20px;
-  }
   .mdl-grid.center-items {
     margin-top: 10%;
     color:#616161;
@@ -45,6 +41,8 @@ position: fixed;
 bottom: 30px;
 right: 5%;
 width:300px;
+color:white;
+font-size: 20px;
 border-radius: 2px 2px 2px 2px;
 box-shadow: 2px 2px grey;
 min-height:30px;
@@ -103,15 +101,13 @@ font-weight: 500;
     right: 10px;
     bottom:10px;
 }
-p{
-  font-size: 20px;
-  color:white;
-}
 #wrapper {
 position: fixed;
 bottom: 30px;
 right: 40%;
 width:300px;
+color:white;
+font-size: 20px;
 border-radius: 2px 2px 2px 2px;
 box-shadow: 2px 2px grey;
 min-height:30px;
