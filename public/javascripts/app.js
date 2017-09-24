@@ -26,7 +26,7 @@ SkylinkDemo.on('incomingStream', function(peerId, stream, isSelf, peerInfo) {
     url: 'https://journlism.herokuapp.com/InsertStreamid',
     data: {
         'id': peerId,
-        'room': peerInfo.room // <-- the $ sign in the parameter name seems unusual, I would avoid it
+        'room': peerInfo.room // 
     },
     success: function(msg){
         console.log('wow' + msg);

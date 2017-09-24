@@ -53,16 +53,16 @@ User.findOne({ name: 'pepo' }, function(err, usere) {
   var user = new User({
     name: 'popo',
     id: req.body.id,
-    room: req.query.room,
+    room: req.body.room,
     live: true
   });
 if (usere==null){
   user.save(function(err) {
     if (err) throw err;
-    res.send(req.query.room);
+    res.send(req.body.room);
   });
 }else{
-  User.findOneAndUpdate({ name: 'pepo' }, { id: req.body.id,room:req.query.room,live:true }, function(err, user) {
+  User.findOneAndUpdate({ name: 'pepo' }, { id: req.body.id,room:req.body.room,live:true }, function(err, user) {
   if (err) throw err;
   res.send("update...")
 });
