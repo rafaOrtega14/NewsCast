@@ -54,6 +54,9 @@ SkylinkDemo.on('incomingStream', function(peerId, stream, isSelf, peerInfo) {
   }
 
 });
+function watchStream(room){
+  window.location.replace("https://journlism.herokuapp.com/watch?room="+room);
+}
 function EndStream(){
   $.ajax({
     type: "GET",
