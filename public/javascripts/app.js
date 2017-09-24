@@ -10,12 +10,14 @@ function launchIntoFullscreen(element) {
     element.msRequestFullscreen();
   }
 }
+$("#wrapper").hide();
 $("#myVideo").hide();
 //--------
 SkylinkDemo.on('mediaAccessSuccess', function(stream) {
   console.log(stream);
   $("#vid").fadeOut();
   $("#myVideo").show();
+  $("#wrapper").show();
   attachMediaStream(document.getElementById("myVideo"), stream);
 });
 //--------
