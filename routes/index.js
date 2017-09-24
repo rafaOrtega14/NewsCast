@@ -25,10 +25,6 @@ res.render('index', { stream: bla});
 });
 
 });
-router.post('/hola',function(req,res,next){
-  if (req.body.palabra == "guau") res.send("hola")
-  res.send(req.body.palabra)
-});
 router.get('/watch', function(req, res, next) {
   res.render('watch');
 });
@@ -44,7 +40,7 @@ router.get('/getstreamid',function(req,res,next){
 router.get('/EndStream',function(req,res,next){
   User.findOneAndUpdate({ name: 'pepo' }, { live: false}, function(err, user) {
   if (err) throw err;
-  res.send("update...")
+  res.redirect('/');
 });
 });
 router.post('/InsertStreamid',function(req,res,next){

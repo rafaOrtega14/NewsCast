@@ -54,6 +54,15 @@ SkylinkDemo.on('incomingStream', function(peerId, stream, isSelf, peerInfo) {
   }
 
 });
+function EndStream(){
+  $.ajax({
+    type: "GET",
+    url: "https://journlism.herokuapp.com/EndStream",
+    success: function(msg){
+      console.log(msg);
+    }
+  });
+}
 //--------
 SkylinkDemo.on('streamEnded', function(peerID, peerInfo, isSelf) {
   if (!isSelf) {
