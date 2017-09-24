@@ -4,7 +4,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  User.findOne({ name: 'pepo' }, function(err, info) {
+  User.findOne({ name: 'pepo',live:true }, function(err, info) {
     if (err) console.log("error");
   res.render('index', { stream: info});
 });
