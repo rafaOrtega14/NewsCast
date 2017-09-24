@@ -51,7 +51,7 @@ router.post('/InsertStreamid',function(req,res,next){
 
 User.findOne({ name: 'pepo' }, function(err, usere) {
   var user = new User({
-    name: 'pepo',
+    name: 'popo',
     id: req.body.id,
     room: req.query.room,
     live: true
@@ -59,7 +59,7 @@ User.findOne({ name: 'pepo' }, function(err, usere) {
 if (usere==null){
   user.save(function(err) {
     if (err) throw err;
-    res.send("insert...");
+    res.send(req.query.room);
   });
 }else{
   User.findOneAndUpdate({ name: 'pepo' }, { id: req.body.id,room:req.query.room,live:true }, function(err, user) {
