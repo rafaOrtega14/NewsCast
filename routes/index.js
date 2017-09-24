@@ -4,8 +4,18 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+
   User.findOne({ name: 'pepo',live:true }, function(err, info) {
     if (err) console.log("error");
+    else{
+      var info = {
+     name: 'default',
+     live: true
+  };
+      if(info==null){
+        res.render('index', { stream: info});
+      }
+    }
   res.render('index', { stream: info});
 });
 
