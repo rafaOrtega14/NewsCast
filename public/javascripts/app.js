@@ -1,8 +1,5 @@
 var SkylinkDemo = new Skylink();
-$('main').ready(function(){
-  var refreshId = setInterval(refrescarTablaEstadoSala, 1000);
-  $.ajaxSetup({ cache: false });
-});
+
 function launchIntoFullscreen(element) {
   if(element.requestFullscreen) {
     element.requestFullscreen();

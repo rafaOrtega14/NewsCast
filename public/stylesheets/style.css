@@ -42,10 +42,9 @@ bottom: 30px;
 right: 5%;
 width:300px;
 min-height:40px;
-background-color:#F44336;
+background-color:#D50000;
 color:white;
 font-size: 20px;
-border-radius: 3px 3px 3px 3px;
 z-index:300000;
 }
 #video_box{
@@ -105,10 +104,9 @@ bottom: 30px;
 right: 40%;
 width:300px;
 min-height:40px;
-background-color:#F44336;
+background-color:#D50000;
 color:white;
 font-size: 20px;
-border-radius: 3px 3px 3px 3px;
 z-index:300000;
 }
 #video_box{
