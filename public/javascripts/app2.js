@@ -21,6 +21,7 @@ http.onreadystatechange = function() {//Call a function when the state changes.
             DOMRemoteVideo.setAttribute("autoplay", "autoplay");
           }
           console.log(http.responseText);
+          DOMRemoteVideo.setAttribute("style", "width: 100%; height: 100%;");
           DOMRemoteVideo.setAttribute("id", http.responseText);
           DOMRemoteVideo.onclick = function() {
             SkylinkDemo.refreshConnection(peerId);
