@@ -18,22 +18,25 @@ router.get('/watch', function(req, res, next) {
   res.render('watch');
 });
 router.get('/getstreamid',function(req,res,next){
-  User.findOne({ name: 'pepa' }, function(err, user) {
+  User.findOne({ name: 'pepo' }, function(err, user) {
   if (err) res.send("0");
+  else {
+    if(user=="") res.send("0");
+  }
   res.send(user.id);
 });
 });
 router.get('/EndStream',function(req,res,next){
-  User.findOneAndUpdate({ name: 'pepa' }, { live: false}, function(err, user) {
+  User.findOneAndUpdate({ name: 'pepo' }, { live: false}, function(err, user) {
   if (err) throw err;
   res.send("update...")
 });
 });
 router.post('/InsertStreamid',function(req,res,next){
 
-User.findOne({ name: 'pepa' }, function(err, usere) {
+User.findOne({ name: 'pepo' }, function(err, usere) {
   var user = new User({
-    name: 'pepa',
+    name: 'pepo',
     id: req.body.id,
     room: req.query.room,
     live: true
@@ -44,7 +47,7 @@ if (usere==null){
     res.send("insert...");
   });
 }else{
-  User.findOneAndUpdate({ name: 'pepa' }, { id: req.body.id,room:req.query.room,live:true }, function(err, user) {
+  User.findOneAndUpdate({ name: 'pepo' }, { id: req.body.id,room:req.query.room,live:true }, function(err, user) {
   if (err) throw err;
   res.send("update...")
 });
