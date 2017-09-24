@@ -23,7 +23,7 @@ height: 126px;
 margin-top: 5px;
 margin-left: 5px;
 border-radius: 5px 5px 5px 5px;
-background: url('./images/wall.png') center / cover;
+background: url('../images/wall.png') center / cover;
 }
 .demo-card-image > .mdl-card__actions {
 height: 52px;
@@ -84,7 +84,7 @@ height: 256px;
 margin-top: 5px;
 margin-left: 5px;
 border-radius: 5px 5px 5px 5px;
-background: url('./images/wall.png') center / cover;
+background: url('../images/wall.png') center / cover;
 }
 .demo-card-image > .mdl-card__actions {
 height: 52px;
