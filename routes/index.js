@@ -58,7 +58,7 @@ if (usere==null){
     res.send(req.body.room);
   });
 }else{
-  User.findOneAndUpdate({ name: 'pepo' }, { id: req.body.id,room:req.body.room,live:true }, function(err, user) {
+  User.findOneAndUpdate({ name: 'popo' }, { id: req.body.id,room:req.body.room,live:true }, function(err, user) {
   if (err) throw err;
   res.send("update...")
 });
