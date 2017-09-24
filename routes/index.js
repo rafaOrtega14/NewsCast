@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
      name: 'default',
      live: true
    };
-   if(info.name==""){
+   if(info==null){
        bla=ninf;
    }else{
      bla=info;
