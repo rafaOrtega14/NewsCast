@@ -6,8 +6,11 @@
 @media only screen and (max-width: 500px) {
   .mdl-grid.center-items {
     margin-top: 10%;
-    color:#EEEEEE;
+    color:#616161;
     justify-content: center;
+  }
+  h1{
+    text-align: center;
   }
   .demo-card-image.mdl-card {
 float:left;
