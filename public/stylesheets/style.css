@@ -38,6 +38,8 @@ font-weight: 200;
 }
 #wrapper {
 position: fixed;
+bottom: 30px;
+right: 5%;
 z-index:300000;
 }
 #video_box{
@@ -93,6 +95,8 @@ font-weight: 500;
 }
 #wrapper {
 position: fixed;
+bottom: 30px;
+right: 5%;
 z-index:300000;
 }
 #video_box{
