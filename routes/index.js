@@ -29,7 +29,7 @@ router.get('/watch', function(req, res, next) {
   res.render('watch');
 });
 router.get('/getstreamid',function(req,res,next){
-  User.findOne({ name: 'pepo' }, function(err, user) {
+  User.findOne({ name: 'popo' }, function(err, user) {
   if (err) res.send("0");
   else {
     if(user=="") res.send("0");

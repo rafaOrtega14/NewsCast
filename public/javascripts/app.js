@@ -70,13 +70,6 @@ function EndStream(){
 //--------
 SkylinkDemo.on('streamEnded', function(peerID, peerInfo, isSelf) {
   if (!isSelf) {
-    $.ajax({
-      type: "GET",
-      url: "https://journlism.herokuapp.com/EndStream",
-      success: function(msg){
-        console.log(msg)
-      }
-    });
     var DOMvideo = document.getElementById("remote_" + peerID);
     // fix for domvideo not defined
     if (DOMvideo) {
@@ -84,7 +77,16 @@ SkylinkDemo.on('streamEnded', function(peerID, peerInfo, isSelf) {
       DOMvideo.src = '';
       DOMcontainer.removeChild(DOMvideo);
     }
+  }else{
+    $.ajax({
+      type: "GET",
+      url: "https://journlism.herokuapp.com/EndStream",
+      success: function(msg){
+        console.log(msg)
+      }
+    });
   }
+
 
 });
 //--------
