@@ -61,8 +61,7 @@ SkylinkDemo.on('streamEnded', function(peerID, peerInfo, isSelf) {
       success: function(msg){
         console.log(msg)
       }
-});
-    console.log("streamEnded");
+    });
     var DOMvideo = document.getElementById("remote_" + peerID);
     // fix for domvideo not defined
     if (DOMvideo) {

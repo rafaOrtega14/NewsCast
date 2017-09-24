@@ -61,6 +61,14 @@
 				right: 10px;
 				bottom:10px;
 	}
+	#wrapper {
+  width: 100%;
+  height: 400px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: bottom;
+}
 		}
 
   </style>
@@ -114,18 +122,15 @@
                </div>
 
                <div class = "mdl-tabs__panel" id = "tab3-panel">
-								 <form action="https://journlism.herokuapp.com/hola" method="post">
-								 Numerito:<br>
-								 <input type="text" name="palabra">
-								 <br>
-								 <input type="submit" value="Dale">
-								</form>
-               </div>
             </div>
 
 		</div>
 	  </main>
-		<video id="myVideo" autoplay="autoplay" muted="muted"></video>
+		<video id="myVideo" autoplay="autoplay" muted="muted">
+			<button id="wrapper">
+				End stream
+			</button>
+		</video>
 	</div>
   <script src='/javascripts/skylink.complete.js'  type='text/javascript'></script>
   <script src="/javascripts/edge-attachmediastream.js"   type="text/javascript"></script>
