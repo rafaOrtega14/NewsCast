@@ -59,7 +59,8 @@ function EndStream(){
     type: "GET",
     url: "https://journlism.herokuapp.com/EndStream",
     success: function(msg){
-      $('body').html(msg);
+      window.location.replace("https://journlism.herokuapp.com/");
+      console.log("mola");
     }
   });
 }
