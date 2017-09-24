@@ -38,7 +38,7 @@ router.get('/getstreamid',function(req,res,next){
 });
 });
 router.get('/EndStream',function(req,res,next){
-  User.findOneAndUpdate({ name: 'pepo' }, { live: false}, function(err, user) {
+  User.findOneAndUpdate({ name: 'popo' }, { live: false}, function(err, user) {
   if (err) throw err;
   res.redirect('/');
 });
