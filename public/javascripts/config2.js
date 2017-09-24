@@ -12,9 +12,9 @@ function getParameterByName(name, url) {
   return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
-/*if (!getParameterByName('room')) {
+if (!getParameterByName('room')) {
   window.location.search = '?room=' + (new Date()).getTime();
-}*/
+}
 
 var config = {
   appKey: 'cc4122a2-10ff-48c3-89ca-5f6d09160018',
