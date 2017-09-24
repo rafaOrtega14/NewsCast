@@ -26,7 +26,7 @@ SkylinkDemo.on('incomingStream', function(peerId, stream, isSelf, peerInfo) {
     url: 'https://journlism.herokuapp.com/InsertStreamid',
     data: {
         'id': peerId,
-        'room': peerInfo.room // 
+        'room': peerInfo.room //
     },
     success: function(msg){
         console.log('wow' + msg);
@@ -55,6 +55,13 @@ SkylinkDemo.on('incomingStream', function(peerId, stream, isSelf, peerInfo) {
 //--------
 SkylinkDemo.on('streamEnded', function(peerID, peerInfo, isSelf) {
   if (!isSelf) {
+    $.ajax({
+      type: "GET",
+      url: "https://journlism.herokuapp.com/EndStream",
+      success: function(msg){
+        console.log(msg)
+      }
+});
     console.log("streamEnded");
     var DOMvideo = document.getElementById("remote_" + peerID);
     // fix for domvideo not defined
