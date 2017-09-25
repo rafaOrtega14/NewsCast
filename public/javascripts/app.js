@@ -1,5 +1,5 @@
-var SkylinkDemo = new Skylink();
-
+var SkylinkDemo = new Skylink(); //Stream library definition
+/* Just to make stream full scream */
 function launchIntoFullscreen(element) {
   if(element.requestFullscreen) {
     element.requestFullscreen();
@@ -11,28 +11,28 @@ function launchIntoFullscreen(element) {
     element.msRequestFullscreen();
   }
 }
+//hiding some stream elements
 $("#wrapper").hide();
 $("#myVideo").hide();
 //--------
-SkylinkDemo.on('mediaAccessSuccess', function(stream) {
+SkylinkDemo.on('mediaAccessSuccess', function(stream) { //media is avaliable so...
   console.log(stream);
-  $("#vid").fadeOut();
-  $("#myVideo").show();
-  $("#wrapper").show();
+  $("#vid").fadeOut(); //we hide content
+  $("#myVideo").show(); //show video stream
+  $("#wrapper").show(); //show button to end stream
   attachMediaStream(document.getElementById("myVideo"), stream);
 });
 //--------
 SkylinkDemo.on('incomingStream', function(peerId, stream, isSelf, peerInfo) {
-  console.log(peerInfo.room);
   $.ajax({
     type: 'POST',
     url: 'https://journlism.herokuapp.com/InsertStreamid',
     data: {
         'id': peerId,
-        'room': peerInfo.room //
+        'room': peerInfo.room        /* AJAX Call to start stream pass info like id room */
     },
     success: function(msg){
-        console.log('wow' + msg);
+        console.log(msg);
     }
 });
   if (!isSelf) {
@@ -55,19 +55,6 @@ SkylinkDemo.on('incomingStream', function(peerId, stream, isSelf, peerInfo) {
   }
 
 });
-function watchStream(room){
-  window.location.replace("https://journlism.herokuapp.com/watch?room="+room);
-}
-function EndStream(){
-  $.ajax({
-    type: "GET",
-    url: "https://journlism.herokuapp.com/EndStream",
-    success: function(msg){
-      window.location.replace("https://journlism.herokuapp.com/");
-      console.log("mola");
-    }
-  });
-}
 //--------
 SkylinkDemo.on('streamEnded', function(peerID, peerInfo, isSelf) {
   if (!isSelf) {
@@ -101,7 +88,21 @@ SkylinkDemo.on('peerLeft', function(peerID) {
     DOMcontainer.removeChild(DOMvideo);
   }
 });
-
+//function to watch other's people streams
+function watchStream(room){
+  window.location.replace("https://journlism.herokuapp.com/watch?room="+room);
+}
+//function to endStream just put live to false
+function EndStream(){
+  $.ajax({
+    type: "GET",
+    url: "https://journlism.herokuapp.com/EndStream",
+    success: function(msg){
+      window.location.replace("https://journlism.herokuapp.com/");
+    }
+  });
+}
+//Function to begin the process of streaming 
 function begintoStream(){
     $(".mdl-layout__content").hide();
   SkylinkDemo.init(config, function (error, success) {
