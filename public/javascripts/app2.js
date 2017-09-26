@@ -1,37 +1,42 @@
 var SkylinkDemo = new Skylink();
-
+SkylinkDemo.init(config, function (error, success) {
+  if (success) {
+    SkylinkDemo.joinRoom({
+      audio: true,
+      video: true
+    });
+  }
+});
 //--------
 SkylinkDemo.on('mediaAccessSuccess', function(stream) {
   console.log("mediaAccessSuccess");
 });
 //--------
 SkylinkDemo.on('incomingStream', function(peerId, stream, isSelf, peerInfo) {
-var http = new XMLHttpRequest();
-var url = "https://journlism.herokuapp.com/getstreamid";
-http.open("GET", url, true);
+$.ajax({
+  type: "GET",
+  url: "https://journlism.herokuapp.com/getstreamid",
+  success: function(id){
+    if (!isSelf) {
+      DOMRemoteVideo = document.getElementById("remote_" + peerId);
 
-http.onreadystatechange = function() {//Call a function when the state changes.
-    if(http.readyState == 4 && http.status == 200) {
-      if (!isSelf) {
-        DOMRemoteVideo = document.getElementById("remote_" + peerId);
-
-        if (!DOMRemoteVideo) {
-          DOMRemoteVideo = document.getElementsByClassName("vid")[0];
-          if (window.webrtcDetectedBrowser !== 'IE') {
-            DOMRemoteVideo.setAttribute("autoplay", "autoplay");
-          }
-          console.log(http.responseText);
-          DOMRemoteVideo.setAttribute("style", "width: 100%; height: 100%;");
-          DOMRemoteVideo.setAttribute("id", http.responseText);
-          DOMRemoteVideo.onclick = function() {
-            SkylinkDemo.refreshConnection(peerId);
-          };
+      if (!DOMRemoteVideo) {
+        DOMRemoteVideo = document.getElementsByClassName("vid")[0];
+        if (window.webrtcDetectedBrowser !== 'IE') {
+          DOMRemoteVideo.setAttribute("autoplay", "autoplay");
         }
-        attachMediaStream(DOMRemoteVideo, stream);
-    }
-    }
-}
-http.send();
+        console.log(http.responseText);
+        DOMRemoteVideo.setAttribute("style", "width: 100%; height: 100%;");
+        DOMRemoteVideo.setAttribute("id", id);
+        DOMRemoteVideo.onclick = function() {
+          SkylinkDemo.refreshConnection(peerId);
+        };
+      }
+      attachMediaStream(DOMRemoteVideo, stream);
+  }
+  }
+});
+
 });
 //--------
 SkylinkDemo.on('streamEnded', function(peerID, peerInfo, isSelf) {
@@ -58,12 +63,3 @@ SkylinkDemo.on('peerLeft', function(peerID) {
     DOMcontainer.removeChild(DOMvideo);
   }
 });
-
-  SkylinkDemo.init(config, function (error, success) {
-    if (success) {
-      SkylinkDemo.joinRoom({
-        audio: true,
-        video: true
-      });
-    }
-  });
