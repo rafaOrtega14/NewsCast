@@ -26,8 +26,8 @@ SkylinkDemo.on('incomingStream', function(peerId, stream, isSelf, peerInfo) {
       $.ajax({
         type: "GET",
         url: "https://journlism.herokuapp.com/getstreamid",
-        success: function(msg){
-          DOMRemoteVideo.setAttribute("id", "remote_" + msg);
+        success: function(id){
+          DOMRemoteVideo.setAttribute("id", "remote_" + id);
           var DOMcontainer = document.getElementById("remoteContainer");
           DOMcontainer.appendChild(DOMRemoteVideo);
           DOMRemoteVideo.onclick = function() {
