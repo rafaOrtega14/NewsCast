@@ -35,8 +35,9 @@ $.ajax({
       }
       attachMediaStream(DOMRemoteVideo, stream);
     }
+    console.log(id)
   },error:function(err){
-  console.log(err);  
+  console.log(err);
   }
 });
 
