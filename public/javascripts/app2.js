@@ -32,7 +32,7 @@ $.ajax({
           SkylinkDemo.refreshConnection(peerId);
         };
       }
-      console.log("dsafads");
+      console.log(stream);
       attachMediaStream(DOMRemoteVideo, stream);
   }
   }
