@@ -33,7 +33,6 @@ $.ajax({
           SkylinkDemo.refreshConnection(peerId);
         };
       }
-      attachMediaStream(DOMRemoteVideo, stream);
     }
 
   },error:function(err){
