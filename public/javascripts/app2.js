@@ -18,13 +18,25 @@ $.ajax({
   url: "https://journlism.herokuapp.com/getstreamid",
   success: function(id){
     if (!isSelf) {
-      console.log(id);
-      console.log(peerId);
-      $(".vid").attr("id","remote_"+ id);
+      console.log("addPeerStream");
+      DOMRemoteVideo = document.getElementsByClassName('vid')[0];
+
+      if (!DOMRemoteVideo) {
+        if (window.webrtcDetectedBrowser !== 'IE') {
+          DOMRemoteVideo.setAttribute("autoplay", "autoplay");
+        }
+        DOMRemoteVideo = document.getElementsByClassName('vid')[0];
+        DOMRemoteVideo.setAttribute("id", "remote_" + id);
+        var DOMcontainer = document.getElementById("remoteContainer");
+        DOMRemoteVideo.onclick = function() {
+          SkylinkDemo.refreshConnection(peerId);
+        };
       }
-      attachMediaStream($(".vid"), stream);
+      attachMediaStream(DOMRemoteVideo, stream);
     }
+  }
 });
+
 });
 //--------
 SkylinkDemo.on('streamEnded', function(peerID, peerInfo, isSelf) {
