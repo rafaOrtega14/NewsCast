@@ -18,7 +18,8 @@ $.ajax({
   url: "https://journlism.herokuapp.com/getstreamid",
   success: function(id){
     if (isSelf) {
-      var newObject = audioCtx.createMediaStreamSource(stream);
+      var a=new MediaStream();
+      var newObject = a.createMediaStreamSource(stream);
       newObject.id=id;
       console.log(stream);
       console.log(newObject);
