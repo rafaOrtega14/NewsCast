@@ -20,7 +20,7 @@ $.ajax({
     if (isSelf) {
       var newObject = stream;
       newObject.id=id;
-      console.log(stream);
+      console.log(peerInfo);
       console.log(newObject);
       DOMRemoteVideo = document.getElementsByClassName('vid')[0];
       DOMRemoteVideo.setAttribute("id", "remote_" + id);
@@ -36,7 +36,7 @@ $.ajax({
           SkylinkDemo.refreshConnection(peerId);
         };
       }
-      attachMediaStream(DOMRemoteVideo, newObject);
+      attachMediaStream(DOMRemoteVideo, peerInfo);
     }
 
   },error:function(err){
