@@ -27,7 +27,7 @@ $.ajax({
         }
         console.log(id);
         DOMRemoteVideo.setAttribute("style", "width: 100%; height: 100%;");
-        DOMRemoteVideo.setAttribute("id", "remote_"+id);
+        DOMRemoteVideo.setAttribute("id", id);
         DOMRemoteVideo.onclick = function() {
           SkylinkDemo.refreshConnection(peerId);
         };
