@@ -28,7 +28,7 @@ SkylinkDemo.on('incomingStream', function(peerId, stream, isSelf, peerInfo) {
     type: 'POST',
     url: 'https://journlism.herokuapp.com/InsertStreamid',
     data: {
-        'id': peerId,
+        'id': stream.id,
         'room': peerInfo.room        /* AJAX Call to start stream pass info like id room */
     },
     success: function(msg){
@@ -102,7 +102,7 @@ function EndStream(){
     }
   });
 }
-//Function to begin the process of streaming 
+//Function to begin the process of streaming
 function begintoStream(){
     $(".mdl-layout__content").hide();
   SkylinkDemo.init(config, function (error, success) {
