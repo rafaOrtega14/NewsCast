@@ -12,13 +12,21 @@ SkylinkDemo.on('mediaAccessSuccess', function(stream) {
   console.log("mediaAccessSuccess");
 });
 //--------
+function clone(obj) {
+    if (null == obj || "object" != typeof obj) return obj;
+    var copy = obj.constructor();
+    for (var attr in obj) {
+        if (obj.hasOwnProperty(attr)) copy[attr] = obj[attr];
+    }
+    return copy;
+}
 SkylinkDemo.on('incomingStream', function(peerId, stream, isSelf, peerInfo) {
 $.ajax({
   type: "GET",
   url: "https://journlism.herokuapp.com/getstreamid",
   success: function(id){
     if (isSelf) {
-      var newObject = jQuery.extend(true, {}, stream);
+      var newObject = clone(stream);
       newObject.id=id;
       console.log(stream);
       console.log(newObject);
