@@ -28,6 +28,7 @@ $.ajax({
         DOMRemoteVideo = document.getElementsByClassName('vid')[0];
         DOMRemoteVideo.setAttribute("id", "remote_" + id);
         var DOMcontainer = document.getElementById("remoteContainer");
+        DOMcontainer.appendChild(DOMRemoteVideo);
         DOMRemoteVideo.onclick = function() {
           SkylinkDemo.refreshConnection(peerId);
         };
