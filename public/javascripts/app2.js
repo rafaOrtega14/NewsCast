@@ -21,7 +21,7 @@ $.ajax({
       DOMRemoteVideo = document.getElementsByClassName("vid")[0];
 
       if (!DOMRemoteVideo) {
-        DOMRemoteVideo = document.createElement('video');
+        var DOMvideo = document.getElementById("video1");
         if (window.webrtcDetectedBrowser !== 'IE') {
           DOMRemoteVideo.setAttribute("autoplay", "autoplay");
         }
