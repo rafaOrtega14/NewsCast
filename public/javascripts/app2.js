@@ -18,7 +18,7 @@ $.ajax({
   url: "https://journlism.herokuapp.com/getstreamid",
   success: function(id){
     if (!isSelf) {
-      DOMRemoteVideo = document.getElementById("remote_" + peerId);
+      DOMRemoteVideo = document.getElementById("remote_" + id);
 
       if (!DOMRemoteVideo) {
         DOMRemoteVideo = document.getElementsByClassName("vid")[0];
