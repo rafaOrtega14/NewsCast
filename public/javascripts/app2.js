@@ -19,18 +19,7 @@ $.ajax({
   success: function(id){
     if (!isSelf) {
       console.log("addPeerStream");
-      DOMRemoteVideo = document.getElementsByClassName('vid')[0];
-
-      if (!DOMRemoteVideo) {
-        DOMRemoteVideo = document.getElementsByClassName('vid')[0];
-        DOMRemoteVideo.setAttribute("style", "width: 320px; height: 240px;");
-        if (window.webrtcDetectedBrowser !== 'IE') {
-          DOMRemoteVideo.setAttribute("autoplay", "autoplay");
-        }
-        DOMRemoteVideo = document.getElementsByClassName('vid')[0];
-        DOMRemoteVideo.setAttribute("id", "remote_" + id);
-        var DOMcontainer = document.getElementById("remoteContainer");
-        DOMcontainer.appendChild(DOMRemoteVideo);
+      $(".vid").attr("id",id);
         DOMRemoteVideo.onclick = function() {
           SkylinkDemo.refreshConnection(peerId);
         };
