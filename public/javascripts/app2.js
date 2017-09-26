@@ -18,11 +18,8 @@ $.ajax({
   url: "https://journlism.herokuapp.com/getstreamid",
   success: function(id){
     if (!isSelf) {
-      console.log("addPeerStream");
-      $(".vid").attr("id","remote_"+id);
-        $(".vid").onclick = function() {
-          SkylinkDemo.refreshConnection(peerId);
-        };
+      console.log(id);
+      $(".vid").attr("id",id);
       }
       attachMediaStream($(".vid"), stream);
     }
