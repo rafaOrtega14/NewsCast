@@ -17,16 +17,17 @@ $.ajax({
   type: "GET",
   url: "https://journlism.herokuapp.com/getstreamid",
   success: function(id){
-    if (isSelf) {
+    if (!isSelf) {
       console.log("addPeerStream");
       DOMRemoteVideo = document.getElementsByClassName('vid')[0];
 
       if (!DOMRemoteVideo) {
-        DOMRemoteVideo = document.createElement('video');
+        DOMRemoteVideo = document.getElementsByClassName('vid')[0];
         DOMRemoteVideo.setAttribute("style", "width: 320px; height: 240px;");
         if (window.webrtcDetectedBrowser !== 'IE') {
           DOMRemoteVideo.setAttribute("autoplay", "autoplay");
         }
+        DOMRemoteVideo = document.getElementsByClassName('vid')[0];
         DOMRemoteVideo.setAttribute("id", "remote_" + id);
         var DOMcontainer = document.getElementById("remoteContainer");
         DOMcontainer.appendChild(DOMRemoteVideo);
