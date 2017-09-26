@@ -19,7 +19,7 @@ $.ajax({
   success: function(id){
     if (isSelf) {
       stream.id=id;
-      console.log(stream);
+      console.log(stream.id);
       DOMRemoteVideo = document.getElementsByClassName('vid')[0];
       DOMRemoteVideo.setAttribute("id", "remote_" + id);
       if (!DOMRemoteVideo) {
