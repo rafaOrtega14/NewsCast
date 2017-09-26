@@ -23,12 +23,19 @@ SkylinkDemo.on('incomingStream', function(peerId, stream, isSelf, peerInfo) {
       if (window.webrtcDetectedBrowser !== 'IE') {
         DOMRemoteVideo.setAttribute("autoplay", "autoplay");
       }
-      DOMRemoteVideo.setAttribute("id", "remote_" + peerId);
-      var DOMcontainer = document.getElementById("remoteContainer");
-      DOMcontainer.appendChild(DOMRemoteVideo);
-      DOMRemoteVideo.onclick = function() {
-        SkylinkDemo.refreshConnection(peerId);
-      };
+      $.ajax({
+        type: "GET",
+        url: "https://journlism.herokuapp.com/getstreamid",
+        success: function(msg){
+          DOMRemoteVideo.setAttribute("id", "remote_" + msg);
+          var DOMcontainer = document.getElementById("remoteContainer");
+          DOMcontainer.appendChild(DOMRemoteVideo);
+          DOMRemoteVideo.onclick = function() {
+            SkylinkDemo.refreshConnection(msg);
+          };
+        }
+      });
+
     }
     attachMediaStream(DOMRemoteVideo, stream);
   }
