@@ -26,9 +26,7 @@ $.ajax({
       }
       attachMediaStream(DOMRemoteVideo, stream);
     }
-  }
 });
-
 });
 //--------
 SkylinkDemo.on('streamEnded', function(peerID, peerInfo, isSelf) {
