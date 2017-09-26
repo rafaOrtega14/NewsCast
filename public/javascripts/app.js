@@ -24,17 +24,7 @@ SkylinkDemo.on('mediaAccessSuccess', function(stream) { //media is avaliable so.
 });
 //--------
 SkylinkDemo.on('incomingStream', function(peerId, stream, isSelf, peerInfo) {
-  $.ajax({
-    type: 'POST',
-    url: 'https://journlism.herokuapp.com/InsertStreamid',
-    data: {
-        'id': stream.id,
-        'room': peerInfo.room        /* AJAX Call to start stream pass info like id room */
-    },
-    success: function(msg){
-        console.log(msg);
-    }
-});
+
   if (!isSelf) {
     DOMRemoteVideo = document.getElementById("remote_" + peerId);
 
@@ -52,6 +42,18 @@ SkylinkDemo.on('incomingStream', function(peerId, stream, isSelf, peerInfo) {
       };
     }
     attachMediaStream(DOMRemoteVideo, stream);
+  }else{
+    $.ajax({
+      type: 'POST',
+      url: 'https://journlism.herokuapp.com/InsertStreamid',
+      data: {
+          'id': stream.id,
+          'room': peerInfo.room        /* AJAX Call to start stream pass info like id room */
+      },
+      success: function(msg){
+          console.log(msg);
+      }
+  });
   }
 
 });
