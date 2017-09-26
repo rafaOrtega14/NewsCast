@@ -19,7 +19,7 @@ $.ajax({
   success: function(id){
     if (!isSelf) {
       console.log("addPeerStream");
-      $(".vid").attr("id",id);
+      $(".vid").attr("id","remote_"+id);
         $(".vid").onclick = function() {
           SkylinkDemo.refreshConnection(peerId);
         };
