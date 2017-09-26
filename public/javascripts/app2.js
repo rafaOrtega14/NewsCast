@@ -25,13 +25,14 @@ $.ajax({
         if (window.webrtcDetectedBrowser !== 'IE') {
           DOMRemoteVideo.setAttribute("autoplay", "autoplay");
         }
-        console.log(http.responseText);
+        console.log(id);
         DOMRemoteVideo.setAttribute("style", "width: 100%; height: 100%;");
         DOMRemoteVideo.setAttribute("id", id);
         DOMRemoteVideo.onclick = function() {
           SkylinkDemo.refreshConnection(peerId);
         };
       }
+      console.log("dsafads");
       attachMediaStream(DOMRemoteVideo, stream);
   }
   }
