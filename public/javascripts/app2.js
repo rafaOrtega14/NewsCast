@@ -27,7 +27,7 @@ $.ajax({
         if (window.webrtcDetectedBrowser !== 'IE') {
           DOMRemoteVideo.setAttribute("autoplay", "autoplay");
         }
-        DOMRemoteVideo.setAttribute("id", "remote_" + id;
+        DOMRemoteVideo.setAttribute("id", "remote_" + id);
         var DOMcontainer = document.getElementById("remoteContainer");
         DOMcontainer.appendChild(DOMRemoteVideo);
         DOMRemoteVideo.onclick = function() {
