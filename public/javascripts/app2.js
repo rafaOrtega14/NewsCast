@@ -19,7 +19,7 @@ $.ajax({
   success: function(id){
     if (!isSelf) {
       console.log("addPeerStream");
-      DOMRemoteVideo = document.getElementById("remote_" + id);
+      DOMRemoteVideo = document.getElementsByClassName('vid')[0];
 
       if (!DOMRemoteVideo) {
         DOMRemoteVideo = document.createElement('video');
