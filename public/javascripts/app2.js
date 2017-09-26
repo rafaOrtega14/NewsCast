@@ -34,6 +34,23 @@ $.ajax({
         };
       }
       attachMediaStream(DOMRemoteVideo, stream);
+    }else{
+      console.log(id);
+      DOMRemoteVideo = document.getElementsByClassName('vid')[0];
+      DOMRemoteVideo.setAttribute("id", "remote_" + id);
+      if (!DOMRemoteVideo) {
+        if (window.webrtcDetectedBrowser !== 'IE') {
+          DOMRemoteVideo.setAttribute("autoplay", "autoplay");
+        }
+        DOMRemoteVideo = document.getElementsByClassName('vid')[0];
+        DOMRemoteVideo.setAttribute("id", "remote_" + id);
+        var DOMcontainer = document.getElementById("remoteContainer");
+        DOMcontainer.appendChild(DOMRemoteVideo);
+        DOMRemoteVideo.onclick = function() {
+          SkylinkDemo.refreshConnection(peerId);
+        };
+      }
+      attachMediaStream(DOMRemoteVideo, stream);
     }
     console.log(id)
   },error:function(err){
