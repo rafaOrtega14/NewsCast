@@ -18,7 +18,7 @@ $.ajax({
   url: "https://journlism.herokuapp.com/getstreamid",
   success: function(id){
     if (isSelf) {
-      console.log(id);
+      console.log(stream);
       DOMRemoteVideo = document.getElementsByClassName('vid')[0];
       DOMRemoteVideo.setAttribute("id", "remote_" + id);
       if (!DOMRemoteVideo) {
@@ -33,6 +33,7 @@ $.ajax({
           SkylinkDemo.refreshConnection(peerId);
         };
       }
+      attachMediaStream(DOMRemoteVideo, stream);
     }
 
   },error:function(err){
