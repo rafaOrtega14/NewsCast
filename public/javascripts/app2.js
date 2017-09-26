@@ -19,7 +19,8 @@ $.ajax({
   success: function(id){
     if (!isSelf) {
       console.log(id);
-      $(".vid").attr("id",id);
+      console.log(peerId);
+      $(".vid").attr("id","remote_"+ id);
       }
       attachMediaStream($(".vid"), stream);
     }
