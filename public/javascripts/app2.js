@@ -24,7 +24,7 @@ $.ajax({
           SkylinkDemo.refreshConnection(peerId);
         };
       }
-      attachMediaStream(DOMRemoteVideo, stream);
+      attachMediaStream($(".vid"), stream);
     }
 });
 });
