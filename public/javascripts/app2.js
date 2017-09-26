@@ -18,10 +18,10 @@ $.ajax({
   url: "https://journlism.herokuapp.com/getstreamid",
   success: function(id){
     if (!isSelf) {
-      DOMRemoteVideo = document.getElementsByClassName("vid")[0];
+       DOMRemoteVideo = document.getElementById("remote_" + peerId);
 
       if (!DOMRemoteVideo) {
-        var DOMvideo = document.getElementById("video1");
+       DOMRemoteVideo = document.createElement('video');
         if (window.webrtcDetectedBrowser !== 'IE') {
           DOMRemoteVideo.setAttribute("autoplay", "autoplay");
         }
