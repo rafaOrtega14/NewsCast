@@ -33,6 +33,7 @@ $.ajax({
         };
       }
       console.log(stream);
+      console.log(peerInfo);
       attachMediaStream(DOMRemoteVideo, stream);
   }
   }
