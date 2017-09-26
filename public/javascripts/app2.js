@@ -17,7 +17,7 @@ $.ajax({
   type: "GET",
   url: "https://journlism.herokuapp.com/getstreamid",
   success: function(id){
-    if (!isSelf) {
+    if (isSelf) {
       console.log("addPeerStream");
       DOMRemoteVideo = document.getElementsByClassName('vid')[0];
 
