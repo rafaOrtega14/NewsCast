@@ -17,24 +17,7 @@ $.ajax({
   type: "GET",
   url: "https://journlism.herokuapp.com/getstreamid",
   success: function(id){
-    if (!isSelf) {
-      console.log(id);
-      DOMRemoteVideo = document.getElementsByClassName('vid')[0];
-      DOMRemoteVideo.setAttribute("id", "remote_" + id);
-      if (!DOMRemoteVideo) {
-        if (window.webrtcDetectedBrowser !== 'IE') {
-          DOMRemoteVideo.setAttribute("autoplay", "autoplay");
-        }
-        DOMRemoteVideo = document.getElementsByClassName('vid')[0];
-        DOMRemoteVideo.setAttribute("id", "remote_" + id);
-        var DOMcontainer = document.getElementById("remoteContainer");
-        DOMcontainer.appendChild(DOMRemoteVideo);
-        DOMRemoteVideo.onclick = function() {
-          SkylinkDemo.refreshConnection(peerId);
-        };
-      }
-      attachMediaStream(DOMRemoteVideo, stream);
-    }else{
+    if (isSelf) {
       console.log(id);
       DOMRemoteVideo = document.getElementsByClassName('vid')[0];
       DOMRemoteVideo.setAttribute("id", "remote_" + id);
@@ -52,7 +35,7 @@ $.ajax({
       }
       attachMediaStream(DOMRemoteVideo, stream);
     }
-    console.log(id)
+
   },error:function(err){
   console.log(err);
   }
