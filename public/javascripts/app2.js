@@ -2,7 +2,7 @@ var SkylinkDemo = new Skylink();
 SkylinkDemo.init(config, function (error, success) {
   if (success) {
     SkylinkDemo.joinRoom({
-      audio: true,
+      audio: false,
       video: true
     });
   }
