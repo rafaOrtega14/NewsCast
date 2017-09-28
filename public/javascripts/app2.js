@@ -3,7 +3,7 @@ SkylinkDemo.init(config, function (error, success) {
   if (success) {
     SkylinkDemo.joinRoom({
       audio: false,
-      video: true
+      video: false
     });
   }
 });
@@ -19,7 +19,7 @@ SkylinkDemo.on('incomingStream', function(peerId, stream, isSelf, peerInfo) {
 
     if (!DOMRemoteVideo) {
       DOMRemoteVideo = document.createElement('video');
-      DOMRemoteVideo.setAttribute("style", "object-fit: cover;");
+      DOMRemoteVideo.className += "videito";
       if (window.webrtcDetectedBrowser !== 'IE') {
         DOMRemoteVideo.setAttribute("autoplay", "autoplay");
       }
