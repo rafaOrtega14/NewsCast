@@ -38,6 +38,7 @@
 										 <!-- we go through JSONARRAY and get our specific room and name -->
 									 <% for(var i=0; i<stream.length;i++){ %>
 										 <!-- we call watchstream from js and pass room as argument -->
+										 <script type="text/javascript">LoadStream('<%= stream[i].room  %>')</script>
 									 <div class="demo-card-image mdl-card mdl-shadow--2dp" onclick="watchStream('<%= stream[i].room  %>')">
 							<div class="mdl-card__title mdl-card--expand">
 						 </div>
