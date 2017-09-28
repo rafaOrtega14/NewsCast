@@ -14,10 +14,6 @@ function launchIntoFullscreen(element) {
 //hiding some stream elements
 $("#wrapper").hide();
 $("#myVideo").hide();
-function loadStream(room){
-  $(".demo-card-image").load("https://journlism.herokuapp.com/watch?room="+room);
-}
-
 //--------
 SkylinkDemo.on('mediaAccessSuccess', function(stream) { //media is avaliable so...
   console.log(stream);

@@ -19,7 +19,7 @@ SkylinkDemo.on('incomingStream', function(peerId, stream, isSelf, peerInfo) {
 
     if (!DOMRemoteVideo) {
       DOMRemoteVideo = document.createElement('video');
-      DOMRemoteVideo.setAttribute("style", "width: 100%; height: 100%;");
+      DOMRemoteVideo.setAttribute("style", "width: 80%; height: 80%;");
       if (window.webrtcDetectedBrowser !== 'IE') {
         DOMRemoteVideo.setAttribute("autoplay", "autoplay");
       }
