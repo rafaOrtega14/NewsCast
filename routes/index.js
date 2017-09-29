@@ -1,6 +1,7 @@
 var express = require('express');
 var request = require('request');
 var querystring = require('querystring');
+var session=require('express-session');
 var ip = require('ip');
 var User = require('../database/schema');
 var router = express.Router();
