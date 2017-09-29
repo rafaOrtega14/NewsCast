@@ -3,7 +3,7 @@ var User = require('../database/schema');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/1', function(req, res, next) {
   res.render('register')
 });
   /*User.find({ live:true }, function(err, streams) { //mongo call User(database schema) find all streams that are live
