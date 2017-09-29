@@ -56,7 +56,8 @@ SkylinkDemo.on('streamEnded', function(peerID, peerInfo, isSelf) {
       DOMcontainer.removeChild(DOMvideo);
     }
   }
-
+  var url="https://journlism.herokuapp.com/";
+    window.location.replace(url);
 });
 //--------
 SkylinkDemo.on('peerLeft', function(peerID) {
