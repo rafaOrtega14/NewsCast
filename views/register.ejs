@@ -9,42 +9,54 @@
 	<link href="/stylesheets/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	   <div>
-	    <h4 class="mdl-dialog__title">Register</h4>
-	   </div>
-	      <div>Username: 
-	      	<form action="#">
-			  <div class="mdl-textfield mdl-js-textfield">
-			    <input class="mdl-textfield__input" type="text" id="username">
-			    <label class="mdl-textfield__label" for="username">Username...</label>
-			  </div>
-			</form>
-		  </div>
-	      <div>Password:
-	      <form action="#">
-			  <div class="mdl-textfield mdl-js-textfield">
-			    <input class="mdl-textfield__input" type="text" id="pass">
-			    <label class="mdl-textfield__label" for="pass">Password...</label>
-			  </div>
-			</form>
-		  </div>
-	      <div>Repeat password: 
-	      <form action="#">
-			  <div class="mdl-textfield mdl-js-textfield">
-			    <input class="mdl-textfield__input" type="text" id="pass2">
-			    <label class="mdl-textfield__label" for="pass2">Repeat password...</label>
-			  </div>
-			</form>
-		  </div>
-	    <div class="mdl-dialog__actions mdl-dialog__actions--full-width"> 
-	      <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
-	      Register</button>
-	      <button type="button" class="mdl-button mdl-js-button close">Close</button>
-	    </div>
+	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+		<!-- Blue header where user img and app title is -->
+	  <header class="mdl-layout__header">
+	    <div class="mdl-layout__header-row">
+				<img src="images/user.png"></img>
+	      <!-- Title -->
+	      <span id="tit" class="mdl-layout-title">Yournalism-Register</span>
+	      <!-- Add spacer, to align navigation to the right -->
+	      <div class="mdl-layout-spacer"></div>
+		      
 		  </span>
 	    </div>
-	  </header>
-	</div>
+	    <div>
+	      <h4 class="mdl-dialog__title">Register</h4>
+	    </div>
+        <div>Username: 
+          <form action="#">
+		    <div class="mdl-textfield mdl-js-textfield">
+		      <input class="mdl-textfield__input" type="text" id="username">
+		      <label class="mdl-textfield__label" for="username">Username...</label>
+		    </div>
+		  </form>
+	    </div>
+        <div>Password:
+          <form action="#">
+		    <div class="mdl-textfield mdl-js-textfield">
+		      <input class="mdl-textfield__input" type="text" id="pass">
+		      <label class="mdl-textfield__label" for="pass">Password...</label>
+		    </div>
+		  </form>
+	    </div>
+        <div>Repeat password: 
+          <form action="#">
+		    <div class="mdl-textfield mdl-js-textfield">
+		      <input class="mdl-textfield__input" type="text" id="pass2">
+		      <label class="mdl-textfield__label" for="pass2">Repeat password...</label>
+		    </div>
+		  </form>
+	    </div>
+    <div> 
+      <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+      Register</button>
+      <button type="button" class="mdl-button mdl-js-button close">Close</button>
+    </div>
+	  </span>
+    </div>
+  </header>
+</div>
 	<!-- Wide card with share menu button -->
 	<!-- JS libraries -->
 	<script>
