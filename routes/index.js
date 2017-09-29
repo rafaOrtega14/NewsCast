@@ -28,7 +28,7 @@ router.get('/sendmsg',function(req,res,next){
    },
    url: 'https://AC375edcf5add139df1fb3c4b3d48943d6:e56eaee02ce230889aa65f7e18e443a1@tadhack.restcomm.com/restcomm/2012-04-24/Accounts/AC375edcf5add139df1fb3c4b3d48943d6/SMS/Messages',
    method: 'POST',
-   json: json
+   body: json
  };
 
  request(options, function(err, rese, body) {
