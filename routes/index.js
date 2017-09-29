@@ -4,15 +4,16 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  User.find({ live:true }, function(err, streams) { //mongo call User(database schema) find all streams that are live
+  res.render('register')
+});
+  /*User.find({ live:true }, function(err, streams) { //mongo call User(database schema) find all streams that are live
     if (err){ //something went wrong
       console.log("error");
     }else{
       res.render('index', { stream: streams}); //render index view passing all the streams as an argument
                                               //streams is an array of json objects (JSONARRAY)
     }
-});
-});
+});*/
 /* GET watch page. */
 router.get('/watch', function(req, res, next) {
   res.render('watch'); //render watch.ejs
@@ -20,7 +21,7 @@ router.get('/watch', function(req, res, next) {
 /*GET register page*/
 router.get('/register', function(req, res, next){
    res.render('register')
-})
+});
 
 /* GET id from the user that is streaming */
 router.get('/getstreamid',function(req,res,next){
