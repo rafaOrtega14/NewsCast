@@ -94,7 +94,7 @@ SkylinkDemo.on('peerLeft', function(peerID) {
 function watchStream(room){
   var url="https://journlism.herokuapp.com/watch?room="+room;
   $.ajax({
-    type: "POST",
+    type: "GET",
     url: "https://journlism.herokuapp.com/sendmsg",
     data: {
         'url': url      /* AJAX Call to start stream pass info like id room */
