@@ -22,7 +22,6 @@ SkylinkDemo.on('mediaAccessSuccess', function(stream) { //media is avaliable so.
   $("#wrapper").show(); //show button to end stream
   attachMediaStream(document.getElementById("myVideo"), stream);
 });
-//--------
 SkylinkDemo.on('incomingStream', function(peerId, stream, isSelf, peerInfo) {
 
   if (!isSelf) {
