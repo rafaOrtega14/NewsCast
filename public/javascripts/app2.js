@@ -27,12 +27,15 @@ SkylinkDemo.on('incomingStream', function(peerId, stream, isSelf, peerInfo) {
         type: "GET",
         url: "https://journlism.herokuapp.com/getstreamid",
         success: function(id){
+          console.log(id);
           DOMRemoteVideo.setAttribute("id", "remote_" + id);
           var DOMcontainer = document.getElementById("remoteContainer");
           DOMcontainer.appendChild(DOMRemoteVideo);
           DOMRemoteVideo.onclick = function() {
             SkylinkDemo.refreshConnection(msg);
           };
+        },error:function(errr){
+          console.log(errr)
         }
       });
 
