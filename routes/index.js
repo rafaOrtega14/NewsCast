@@ -1,5 +1,6 @@
 var express = require('express');
 var request = require('request');
+var querystring = require('querystring');
 var ip = require('ip');
 var User = require('../database/schema');
 var router = express.Router();
@@ -21,14 +22,14 @@ router.get('/sendmsg',function(req,res,next){
     'From':'2B34911067304',
     'Body':'Terrible terremote on ireland'
  };
-
+var formData = querystring.stringify(json);
  var options = {
    headers: {
      'Content-Type': 'application/x-www-form-urlencoded'
    },
    url: 'https://AC375edcf5add139df1fb3c4b3d48943d6:e56eaee02ce230889aa65f7e18e443a1@tadhack.restcomm.com/restcomm/2012-04-24/Accounts/AC375edcf5add139df1fb3c4b3d48943d6/SMS/Messages',
    method: 'POST',
-   body: json
+   body: formData
  };
 
  request(options, function(err, rese, body) {
