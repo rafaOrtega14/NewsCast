@@ -67,7 +67,7 @@ router.get('/getstreamid',function(req,res,next){
 });
 /* GET that update stream to shut it down*/
 router.get('/EndStream',function(req,res,next){
-  User.findOneAndUpdate({ name: req.session.user }, { live: false}, function(err, user) { //mongo call find user and UPDATE him
+  User.findOneAndUpdate({ name: 'Pedro'}, { live: false}, function(err, user) { //mongo call find user and UPDATE him
   if (err) throw err;
   res.redirect('/'); //we redirect to our index main page just to close application flow
 });
