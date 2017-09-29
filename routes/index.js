@@ -31,11 +31,11 @@ router.get('/sendmsg',function(req,res,next){
    json: json
  };
 
- request(options, function(err, res, body) {
-   if (res && (res.statusCode === 200 || res.statusCode === 201)) {
+ request(options, function(err, rese, body) {
+   if (rese && (res.statusCode === 200 || res.statusCode === 201)) {
 
    }
-   res.send(res)
+   res.send(rese)
  });
 });
 /* GET watch page. */
