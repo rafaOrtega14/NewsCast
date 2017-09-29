@@ -12,6 +12,7 @@ router.get('/', function(req, res, next) {
                                               //streams is an array of json objects (JSONARRAY)
     }
 });
+});
   /*User.find({ live:true }, function(err, streams) { //mongo call User(database schema) find all streams that are live
     if (err){ //something went wrong
       console.log("error");
