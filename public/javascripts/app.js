@@ -1,6 +1,4 @@
-//hiding some stream elements
-$("#wrapper").hide();
-$("#myVideo").hide();
+
 var SkylinkDemo = new Skylink(); //Stream library definition
 /* Just to make stream full scream */
 function launchIntoFullscreen(element) {
