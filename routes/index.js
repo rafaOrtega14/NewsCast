@@ -57,7 +57,7 @@ router.get('/register', function(req, res, next){
 
 /* GET id from the user that is streaming */
 router.get('/getstreamid',function(req,res,next){
-  User.findOne({ name: 'pedro' }, function(err, user) { //mongo call that get user information of an user
+  User.findOne({ name: 'Pedro' }, function(err, user) { //mongo call that get user information of an user
   if (err) res.send("0"); //if something went wrong 0
   else {
     if(user=="") res.send("0"); //if user doesnt exists 0
