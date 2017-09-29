@@ -103,8 +103,7 @@ function watchStream(room){
       console.log(msg)
     }
   });
-}
-  window.location.replace(url);
+    window.location.replace(url);
 }
 //function to endStream just put live to false
 function EndStream(){
