@@ -15,11 +15,11 @@ router.get('/', function(req, res, next) {
     }
 });
 });
-router.post('/sendmsg',function(req,res,next){
+router.get('/sendmsg',function(req,res,next){
   var json = {
     'To':'0034618227956',
     'From':'2B34911067304',
-    'Body':'Terrible terremote on ireland'+req.body.url
+    'Body':'Terrible terremote on ireland'
  };
 
  var options = {
