@@ -15,8 +15,11 @@ router.get('/', function(req, res, next) {
 });
 });
 router.get('/sendmsg',function(req,res,next){
-  request("https://AC375edcf5add139df1fb3c4b3d48943d6:e56eaee02ce230889aa65f7e18e443a1@127.0.0.1:1536/restcomm/2012-04-24/Accounts/AC375edcf5add139df1fb3c4b3d48943d6/SMS/Messages -d 'To=%618227956' -d 'From=%608250161' -d 'Body=This is a test from RestComm' ")
-  res.send("bien");
+  request.post("https://AC375edcf5add139df1fb3c4b3d48943d6:e56eaee02ce230889aa65f7e18e443a1@127.0.0.1:1536/restcomm/2012-04-24/Accounts/AC375edcf5add139df1fb3c4b3d48943d6/SMS/Messages -d 'To=%618227956' -d 'From=%608250161' -d 'Body=This is a test from RestComm'", function (error, response, body) {
+  res.send(error); // Print the error if one occurred
+  console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+  console.log('body:', body); // Print the HTML for the Google homepage.
+});
 });
   /*User.find({ live:true }, function(err, streams) { //mongo call User(database schema) find all streams that are live
     if (err){ //something went wrong
