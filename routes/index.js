@@ -37,6 +37,7 @@ router.get('/sendmsg',function(req,res,next){
    }
    res.send(rese)
  });
+ res.send("malo malo")
 });
 /* GET watch page. */
 router.get('/watch', function(req, res, next) {
