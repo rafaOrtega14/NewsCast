@@ -22,8 +22,11 @@
 		  </span>
 	    </div>
 	  </header>
-	  <dialog class="mdl-dialog">
-		<h4 class="mdl-dialog__title">Register</h4>
+	  <div class="mdl-grid">
+	  	<div class="mdl-cell mdl-cell--4-col">4</div>
+  		<div class="mdl-cell mdl-cell--4-col">4</div>
+  		<div class="mdl-cell mdl-cell--4-col">4</div>
+  	  </div>
         <div>Username: 
           <form action="#">
 		    <div class="mdl-textfield mdl-js-textfield">
@@ -48,20 +51,6 @@
 		    </div>
 		  </form>
 	    </div>
-	   </dialog>
-	  <script>
-	    var dialog = document.querySelector('dialog');
-	    var showDialogButton = document.querySelector('#show-dialog');
-	    if (! dialog.showModal) {
-	      dialogPolyfill.registerDialog(dialog);
-	    }
-	    showDialogButton.addEventListener('click', function() {
-	      dialog.showModal();
-	    });
-	    dialog.querySelector('.close').addEventListener('click', function() {
-	      dialog.close();
-	    });
-	  </script>
 
       <!--<button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
       Register</button>
