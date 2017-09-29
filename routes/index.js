@@ -16,7 +16,6 @@ router.get('/', function(req, res, next) {
                                               //streams is an array of json objects (JSONARRAY)
     }
 });
-//dskjaskdjfhksdj
 });
 router.post('/registeruser',function(req,res,next){
   req.session.user=req.body.user;

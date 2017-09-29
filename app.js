@@ -26,7 +26,7 @@ app.use(cookieParser());
 app.use(session({ secret: 'HiddenMan360', cookie: { maxAge: 60*60*24*30 }, resave: true, saveUninitialized: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
+app.use('/register', index);
 app.use('/users', users);
 
 // catch 404 and forward to error handler
