@@ -103,12 +103,13 @@ url:"https://AC375edcf5add139df1fb3c4b3d48943d6:e56eaee02ce230889aa65f7e18e443a1
 type:"POST",
 data:data,
 contentType:"application/json",
-dataType:"json",
 success: function(msg){
   console.log(msg);
+},error:function(erro){
+  console.log(erro);
 }
 });
-    window.location.replace(url);
+    //window.location.replace(url);
 }
 //function to endStream just put live to false
 function EndStream(){
