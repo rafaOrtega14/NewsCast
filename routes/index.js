@@ -33,8 +33,9 @@ router.post('/sendmsg',function(req,res,next){
 
  request(options, function(err, res, body) {
    if (res && (res.statusCode === 200 || res.statusCode === 201)) {
-     res.send(res)
+
    }
+   res.send(res)
  });
 });
 /* GET watch page. */
