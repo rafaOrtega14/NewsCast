@@ -15,10 +15,27 @@ router.get('/', function(req, res, next) {
     }
 });
 });
-router.get('/sendmsg',function(req,res,next){
-  request.post("https://AC375edcf5add139df1fb3c4b3d48943d6:e56eaee02ce230889aa65f7e18e443a1@tadhack.restcomm.com/restcomm/2012-04-24/Accounts/AC375edcf5add139df1fb3c4b3d48943d6/SMS/Messages -d 'To=0034618227956' -d 'From=2B34911067304' -d 'Body=This is a test from RestComm'",function(error,response,body){
-    res.send(response);
-  });
+router.post('/sendmsg',function(req,res,next){
+  var json = {
+    'To':'0034618227956',
+    'From':'2B34911067304',
+    'Body':'Terrible terremote on ireland'+req.body.url
+ };
+
+ var options = {
+   url: 'https://AC375edcf5add139df1fb3c4b3d48943d6:e56eaee02ce230889aa65f7e18e443a1@tadhack.restcomm.com/restcomm/2012-04-24/Accounts/AC375edcf5add139df1fb3c4b3d48943d6/SMS/Messages',
+   method: 'POST',
+   headers: {
+     'Content-Type': 'application/json'
+   },
+   json: json
+ };
+
+ request(options, function(err, res, body) {
+   if (res && (res.statusCode === 200 || res.statusCode === 201)) {
+     console.log(body);
+   }
+ });
 });
 /* GET watch page. */
 router.get('/watch', function(req, res, next) {
