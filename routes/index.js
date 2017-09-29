@@ -17,6 +17,11 @@ router.get('/', function(req, res, next) {
 router.get('/watch', function(req, res, next) {
   res.render('watch'); //render watch.ejs
 });
+/*GET register page*/
+router.get('/register', function(req, res, next){
+   res.render('register')
+})
+
 /* GET id from the user that is streaming */
 router.get('/getstreamid',function(req,res,next){
   User.findOne({ name: 'popo' }, function(err, user) { //mongo call that get user information of an user
