@@ -9,48 +9,38 @@
 	<link href="/stylesheets/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-		<!-- Blue header where user img and app title is -->
-	  <header class="mdl-layout__header">
-	    <div class="mdl-layout__header-row">
-				<img src="images/user.png"></img>
-	      <!-- Title -->
-	      <span id="tit" class="mdl-layout-title">Yournalism-Register</span>
-	      <span>
-		      <button id="show-dialog" type="button" class="mdl-button">Register</button>
-			  <dialog class="mdl-dialog">
-			    <h4 class="mdl-dialog__title">Register</h4>
-			    <div class="mdl-dialog__content">
-			      <div>Username: 
-			      	<form action="#">
-					  <div class="mdl-textfield mdl-js-textfield">
-					    <input class="mdl-textfield__input" type="text" id="username">
-					    <label class="mdl-textfield__label" for="username">Username...</label>
-					  </div>
-					</form>
-				  </div>
-			      <div>Password:
-			      <form action="#">
-					  <div class="mdl-textfield mdl-js-textfield">
-					    <input class="mdl-textfield__input" type="text" id="pass">
-					    <label class="mdl-textfield__label" for="pass">Password...</label>
-					  </div>
-					</form>
-				  </div>
-			      <div>Repeat password: 
-			      <form action="#">
-					  <div class="mdl-textfield mdl-js-textfield">
-					    <input class="mdl-textfield__input" type="text" id="pass2">
-					    <label class="mdl-textfield__label" for="pass2">Repeat password...</label>
-					  </div>
-					</form>
-				  </div>
-			    </div>
-			    <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
-			      <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Register</button>
-			      <button class="mdl-button mdl-js-button close">Close</button>
-			    </div>
-			  </dialog>
+	   <div>
+	    <h4 class="mdl-dialog__title">Register</h4>
+	   </div>
+	      <div>Username: 
+	      	<form action="#">
+			  <div class="mdl-textfield mdl-js-textfield">
+			    <input class="mdl-textfield__input" type="text" id="username">
+			    <label class="mdl-textfield__label" for="username">Username...</label>
+			  </div>
+			</form>
+		  </div>
+	      <div>Password:
+	      <form action="#">
+			  <div class="mdl-textfield mdl-js-textfield">
+			    <input class="mdl-textfield__input" type="text" id="pass">
+			    <label class="mdl-textfield__label" for="pass">Password...</label>
+			  </div>
+			</form>
+		  </div>
+	      <div>Repeat password: 
+	      <form action="#">
+			  <div class="mdl-textfield mdl-js-textfield">
+			    <input class="mdl-textfield__input" type="text" id="pass2">
+			    <label class="mdl-textfield__label" for="pass2">Repeat password...</label>
+			  </div>
+			</form>
+		  </div>
+	    <div class="mdl-dialog__actions mdl-dialog__actions--full-width"> 
+	      <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+	      Register</button>
+	      <button type="button" class="mdl-button mdl-js-button close">Close</button>
+	    </div>
 		  </span>
 	    </div>
 	  </header>
