@@ -16,11 +16,11 @@ router.get('/', function(req, res, next) {
     }
 });
 });
-router.get('/sendmsg',function(req,res,next){
+router.post('/sendmsg',function(req,res,next){
   var json = {
     'To':'0034618227956',
     'From':'2B34911067304',
-    'Body':'Terrible terremote on ireland'
+    'Body':'Terrible terremote on ireland '+req.body.url
  };
 var formData = querystring.stringify(json);
  var options = {
@@ -38,7 +38,7 @@ var formData = querystring.stringify(json);
    }
    res.send(rese)
  });
- res.send("malo malo")
+ res.send("fdasadsf")
 });
 /* GET watch page. */
 router.get('/watch', function(req, res, next) {
