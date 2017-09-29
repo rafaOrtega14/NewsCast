@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {
 });
 });
 router.get('/sendmsg',function(req,res,next){
-  request("https://AC375edcf5add16:e56eaee02ce230889aa65f7e18e443a1@tadhack.restcomm.com/restcomm/2012-04-24/Accounts/AC375edcf5add139df1fb3c4b3d48943d6/SMS/Messages -d 'To=0034618227956' -d 'From=%2B34911067304' -d 'Body=Terible terremote on ireland go check this on '",function(error,response,body){
+  request("https://AC375edcf5add16:e56eaee02ce230889aa65f7e18e443a1@tadhack.restcomm.com/restcomm/2012-04-24/Accounts/AC375edcf5add139df1fb3c4b3d48943d6/SMS/Messages",function(error,response,body){
     res.send(response);
   });
 });
