@@ -33,7 +33,7 @@ router.post('/sendmsg',function(req,res,next){
 
  request(options, function(err, res, body) {
    if (res && (res.statusCode === 200 || res.statusCode === 201)) {
-     console.log(body);
+     res.send(res)
    }
  });
 });
