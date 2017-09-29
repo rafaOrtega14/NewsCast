@@ -6,8 +6,7 @@ var User = require('../database/schema');
 var router = express.Router();
 
 /* GET home page. */
-router.post('/', function(req, res, next) {
-  req.session.user=req.body.user;
+router.get('/', function(req, res, next) {
   User.find({ live:true }, function(err, streams) { //mongo call User(database schema) find all streams that are live
     if (err){ //something went wrong
       console.log("error");
@@ -16,6 +15,10 @@ router.post('/', function(req, res, next) {
                                               //streams is an array of json objects (JSONARRAY)
     }
 });
+});
+router.post('/registeruser',function(req,res,next){
+  req.session.user=req.body.user;
+  res.redirect('/')
 });
 router.post('/sendmsg',function(req,res,next){
   var json = {
