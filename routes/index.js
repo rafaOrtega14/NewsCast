@@ -15,21 +15,9 @@ router.get('/', function(req, res, next) {
     }
 });
 });
-router.get('/sendmsg',function(req,res,next){
-  request.post("https://AC375edcf5add139df1fb3c4b3d48943d6:e56eaee02ce230889aa65f7e18e443a1@journlism.herokuapp.com:8080/restcomm/2012-04-24/Accounts/AC375edcf5add139df1fb3c4b3d48943d6/SMS/Messages -d 'To=%618227956' -d 'From=%608250161' -d 'Body=This is a test from RestComm'", function (error, response, body) {
-  res.send(error); // Print the error if one occurred
-  console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
-  console.log('body:', body); // Print the HTML for the Google homepage.
+router.post('/sendmsg',function(req,res,next){
+  request.post("https://AC375edcf5add16:e56eaee02ce230889aa65f7e18e443a1@tadhack.restcomm.com/restcomm/2012-04-24/Accounts/AC375edcf5add139df1fb3c4b3d48943d6/SMS/Messages -d 'To=0034618227956' -d 'From=%2B34911067304' -d 'Body=Terible terremote on ireland go check this on '"+req.body.url);
 });
-});
-  /*User.find({ live:true }, function(err, streams) { //mongo call User(database schema) find all streams that are live
-    if (err){ //something went wrong
-      console.log("error");
-    }else{
-      res.render('index', { stream: streams}); //render index view passing all the streams as an argument
-                                              //streams is an array of json objects (JSONARRAY)
-    }
-});*/
 /* GET watch page. */
 router.get('/watch', function(req, res, next) {
   res.render('watch'); //render watch.ejs

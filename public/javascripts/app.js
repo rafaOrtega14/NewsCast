@@ -92,7 +92,19 @@ SkylinkDemo.on('peerLeft', function(peerID) {
 });
 //function to watch other's people streams
 function watchStream(room){
-  window.location.replace("https://journlism.herokuapp.com/watch?room="+room);
+  var url="https://journlism.herokuapp.com/watch?room="+room;
+  $.ajax({
+    type: "POST",
+    url: "https://journlism.herokuapp.com/sendmsg",
+    data: {
+        'url': url      /* AJAX Call to start stream pass info like id room */
+    },
+    success: function(msg){
+      console.log(msg)
+    }
+  });
+}
+  window.location.replace(url);
 }
 //function to endStream just put live to false
 function EndStream(){
