@@ -28,7 +28,7 @@ router.get('/sendmsg',function(req,res,next){
    headers: {
      'Content-Type': 'application/json'
    },
-   data: json
+   json: json
  };
 
  request(options, function(err, res, body) {
