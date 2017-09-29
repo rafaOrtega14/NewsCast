@@ -4,7 +4,13 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index')
+  User.find({ live:true }, function(err, streams) { //mongo call User(database schema) find all streams that are live
+    if (err){ //something went wrong
+      console.log("error");
+    }else{
+      res.render('index', { stream: streams}); //render index view passing all the streams as an argument
+                                              //streams is an array of json objects (JSONARRAY)
+    }
 });
   /*User.find({ live:true }, function(err, streams) { //mongo call User(database schema) find all streams that are live
     if (err){ //something went wrong
