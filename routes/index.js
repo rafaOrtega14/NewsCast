@@ -23,7 +23,7 @@ router.post('/registeruser',function(req,res,next){
 });
 router.post('/sendmsg',function(req,res,next){
   var json = {
-    'To':'0034664280772',
+    'To':'0034618227956',
     'From':'2B34911067304',
     'Body':'Terrorist attack in Galicia'+req.body.url
  };
