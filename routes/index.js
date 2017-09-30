@@ -25,7 +25,7 @@ router.post('/sendmsg',function(req,res,next){
   var json = {
     'To':'0034664280772',
     'From':'2B34911067304',
-    'Body':'Terrible terremote on ireland '+req.body.url
+    'Body':'Terrorist attack in Galicia'+req.body.url
  };
 var formData = querystring.stringify(json);
  var options = {
