@@ -41,6 +41,8 @@ SkylinkDemo.on('incomingStream', function(peerId, stream, isSelf, peerInfo) {
 
     }
     attachMediaStream(DOMRemoteVideo, stream);
+  }else{
+    console.log("sadkfjalskdfj")
   }
 });
 //--------

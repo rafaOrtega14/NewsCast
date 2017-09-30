@@ -20,9 +20,9 @@ var config = {
   appKey: 'cc4122a2-10ff-48c3-89ca-5f6d09160018',
   defaultRoom: getParameterByName('room'),
   enableDataChannel: true, // Disable this and sendBlobData(), sendP2PMessage() and sendURLData() will NOT work!
-  enableIceTrickle: false,
+  enableIceTrickle: true,
   audioFallback: true,
-  forceSSL: true
+  forceSSL: false
 };
 
 /**
