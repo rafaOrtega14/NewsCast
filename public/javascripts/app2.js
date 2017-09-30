@@ -42,7 +42,7 @@ SkylinkDemo.on('incomingStream', function(peerId, stream, isSelf, peerInfo) {
     }
     attachMediaStream(DOMRemoteVideo, stream);
   }
-
+  console.log(isSelf);
 });
 //--------
 SkylinkDemo.on('streamEnded', function(peerID, peerInfo, isSelf) {
