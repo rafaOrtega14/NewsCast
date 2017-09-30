@@ -22,7 +22,7 @@ var config = {
   enableDataChannel: true, // Disable this and sendBlobData(), sendP2PMessage() and sendURLData() will NOT work!
   enableIceTrickle: true,
   audioFallback: true,
-  forceSSL: true
+  forceSSL: false
 };
 
 /**
